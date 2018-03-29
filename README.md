@@ -117,6 +117,20 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 ### 如何实现同步
 [https://fangjian0423.github.io/2016/04/18/java-synchronize-way/](https://fangjian0423.github.io/2016/04/18/java-synchronize-way/)
 
+### 如何避免死锁
+比如某个线程只有获得 A 锁和 B 锁才能对某资源进行操作，在多线程条件下，如何避免死锁？
+
+规定只有获得 A 锁的线程才有资格获取 B 锁，按顺序获取锁就可以避免死锁
+
+### volatile
+功能：
+
+1. 主内存和工作内存，直接与主内存产生交互，进行读写操作，保证可见性；
+2. 禁止 JVM 进行的指令重排序。
+
+### ThreadLocal
+每个线程内部都会维护一个类似 HashMap 的对象，称为 ThreadLocalMap，里边会包含若干了 Entry（K-V 键值对）
+
 # 数据库
 ## MySQL
 ### SQL性能优化
