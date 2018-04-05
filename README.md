@@ -232,29 +232,16 @@ cglib工具：利用asm开源包，对代理对象类的class文件加载进来�
 最坏情况：每次划分过程产生的两个区间分别包含n-1个元素和1个元素，一共需要划分n-1次，每次最多交换n-1次，这就是冒泡排序了，O(n2)
 
 # 高性能架构
+
+## JVM调优
+[https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html](https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html)
+
 ## 高并发怎么处理
 问题：比较耗CPU的任务摆在这里，程序也无法提升性能了，该怎么办？
 
 1. 先判断能否使用缓存，还是重新耗费CPU资源来创建一个
 2. 用偏重CPU性能的机器来做这个功能的专项负载均衡
 3. 请求太多的话，搞个消息队列排着，慢慢消费，同时前端提示需要一会才行
-
-## 存储查询大量的数据
-
-### HDFS
-
-![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j6.jpg)
-
-### 实现思路
-
-* 文件被切块存储在多台服务器上
-* HDFS提供一个统一的平台与客户端交互
-* 每个文件都可以保存多个副本
-* HDFS上的文件和实际存储位置对应关系靠NAMENODE管理
-
-### 优点
-1. 每个数据的副本数量固定，直接增加一台机器就可以实现线性扩展
-2. 有副本让存储可靠性高，可以处理的吞吐量增大
 
 ## 控制拿数据库连接池资源
 问题：数据库连接池就那么几个，但是有很多来拿怎么办？加个超时限制怎么加？
@@ -281,9 +268,16 @@ cglib工具：利用asm开源包，对代理对象类的class文件加载进来�
 
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j8.gif)
 
-### Lucene存储原理
-
 ## 爬虫优化
+### 下载工具
+HttpURLConnection：本身的 API 不够友好，所提供的功能也有限  
+HttpClient：功能强大  
+OkHttp：是一个专注于性能和易用性的 HTTP 客户端。OkHttp 会使用连接池来复用连接以提高效率。OkHttp 提供了对 GZIP 的默认支持来降低传输内容的大小。OkHttp 也提供了对 HTTP 响应的缓存机制，可以避免不必要的网络请求。当网络出现问题时，OkHttp 会自动重试一个主机的多个 IP 地址。
+
+### 动态页面的加载
+
+phantomjs + selenium + java
+
 ### 如何抓取需要登录的页面
 模拟登录之后将sessionId保存到request header的cookie中
 
@@ -291,3 +285,20 @@ cglib工具：利用asm开源包，对代理对象类的class文件加载进来�
 1. 买个支持ADSL的拨号服务器，便宜的一个月80，然后在上面搭建代理服务器，用爬虫连上去
 2. 自己探索不同网站的访问频率限制规则
 3. 寻找网站访问频率访问限制漏洞
+
+### 存储查询大量的数据
+
+因为下载下来的HTML文件都是小文件，所以使用HDFS存储。我们需要两种节点，namenode节点来管理元数据，datanode节点来存储设计数据。
+
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j6.jpg)
+
+### 实现思路
+
+* 文件被切块存储在多台服务器上
+* HDFS提供一个统一的平台与客户端交互
+* 每个文件都可以保存多个副本
+
+### 优点
+1. 每个数据的副本数量固定，直接增加一台机器就可以实现线性扩展
+2. 有副本让存储可靠性高
+3. 可以处理的吞吐量增大
