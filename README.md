@@ -147,7 +147,6 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 ## MySQL
 ### SQL性能优化
 * 对经常查询的列建立索引，为了避免全表扫描，建多了当数据改变时修改索引浪费资源
-* 建立主键，根据主键查询，关联查询使用主键关联外键
 * 使用精确列名查询而不是*
 * 减少嵌套查询
 * 不用NOT IN,IS NULL,NOT IS NULL，无法使用索引
@@ -195,6 +194,14 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 ## 常用模式
 ## 观察者模式
 ## 管道-过滤器模式
+## 装饰器模式
+动态地将责任附加到对象上，如果要拓展功能，装饰器提供了比继承更有弹性的方式。
+
+Java IO包中就使用了该模式，InputStream有太多的实现类如FileInputStream，如果要在每个实现类上加上几种功能如缓冲区读写功能Buffered，则会导致出现ileInputStreamBuffered, StringInputStreamBuffered等等，如果还要加个按行读写的功能，类会更多，代码重复度也太高。
+
+所以使用FilterInputStream这个抽象装饰器来装饰InputStream，使得我们可以用BufferedInputStream来包装FileInputStream得到特定增强版InputStream，且增加装饰器种类也会更加灵活。
+
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j9.png)
 
 # Web框架
 ## Spring
