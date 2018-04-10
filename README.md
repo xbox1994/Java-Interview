@@ -8,7 +8,7 @@ JVM本身是介于JAVA编译器和操作系统之间的程序，这个程序提�
 
 所有线程共享的数据区： 
 
-1.	方法区: 存储已被虚拟机加载的类信息、静态变量、即时编译后代码等数据。并使用永久代来实现方法区，1.8后被元空间替代，元空间并不在虚拟机中，而是使用本地内存，要画到上图那就是图外了。
+1.	方法区: 存储已被虚拟机加载的类信息、静态变量、编译后代码等数据。并使用永久代来实现方法区，1.8后被元空间替代，元空间并不在虚拟机中，而是使用本地内存，要画到上图那就是图外了。
 2.	堆区: 我们常说用于存放对象的区域，1.7之后字符串常量池移到这里。
 
 每个线程私有的数据区： 
@@ -213,7 +213,11 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 ### 行为型
 策略模式、迭代器模式、访问者模式、观察者模式、命令模式、中介者模式、状态模式
 ## 常用模式
-## 观察者模式
+## 单例模式
+[http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/](http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/)
+
+Enum实现原理
+
 ## 管道-过滤器模式
 ## 装饰器模式
 动态地将责任附加到对象上，如果要拓展功能，装饰器提供了比继承更有弹性的方式。
@@ -234,6 +238,23 @@ Spring是个包含一系列功能的合集，如快速开发的Spring Boot，支
 1. 发送请求——>DispatcherServlet拦截器拿到交给HandlerMapping
 2. 依次调用配置的拦截器，最后找到配置好的业务代码Handler并执行业务方法
 3. 包装成ModelAndView返回给ViewResolver解析器渲染页面
+
+### Bean的生命周期
+
+1. Spring对Bean进行实例化
+2. Spring将值和Bean的引用注入进Bean对应的属性中
+3. 容器通过Aware接口把容器信息注入Bean
+4. BeanPostProcessor。进行进一步的构造，会在InitialzationBean前后执行对应方法，当前正在初始化的bean对象会被传递进来，我们就可以对这个bean作任何处理
+5. InitializingBean。这一阶段也可以在bean正式构造完成前增加我们自定义的逻辑，但它与前置处理不同，由于该函数并不会把当前bean对象传进来，因此在这一步没办法处理对象本身，只能增加一些额外的逻辑。
+6. DispostbleBean。Bean将一直驻留在应用上下文中给应用使用，直到应用上下文被销毁，如果Bean实现了接口，Spring将调用它的destory方法
+
+### Bean的作用域
+
+* singleton：单例模式，Spring IoC容器中只会存在一个共享的Bean实例，无论有多少个Bean引用它，始终指向同一对象。
+* prototype：原型模式，每次通过Spring容器获取prototype定义的bean时，容器都将创建一个新的Bean实例，每个Bean实例都有自己的属性和状态。
+* request：在一次Http请求中，容器会返回该Bean的同一实例。而对不同的Http请求则会产生新的Bean，而且该bean仅在当前Http Request内有效。
+* session：在一次Http Session中，容器会返回该Bean的同一实例。而对不同的Session请求则会创建新的实例，该bean实例仅在当前Session内有效。
+* global Session：在一个全局的Http Session中，容器会返回该Bean的同一个实例，仅在使用portlet context时有效。
 
 
 ### IOC（DI）
