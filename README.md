@@ -138,11 +138,6 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 ### 如何实现同步
 [https://fangjian0423.github.io/2016/04/18/java-synchronize-way/](https://fangjian0423.github.io/2016/04/18/java-synchronize-way/)
 
-### 如何避免死锁
-比如某个线程只有获得 A 锁和 B 锁才能对某资源进行操作，在多线程条件下，如何避免死锁？
-
-规定只有获得 A 锁的线程才有资格获取 B 锁，按顺序获取锁就可以避免死锁
-
 ### volatile
 功能：
 
@@ -150,7 +145,20 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 2. 禁止 JVM 进行的指令重排序。
 
 ### ThreadLocal
-每个线程内部都会维护一个类似 HashMap 的对象，称为 ThreadLocalMap，里边会包含若干了 Entry（K-V 键值对）
+使用`ThreadLocal<UserInfo> userInfo = new ThreadLocal<UserInfo>()`的方式，让每个线程内部都会维护一个ThreadLocalMap，里边包含若干了 Entry（K-V 键值对），每次存取都会先的都当前线程，然后得到该线程对象中的Map，然后与Map交互。
+
+### 线程池
+[ThreadPoolExecutor](https://www.jianshu.com/p/edd7cb4eafa0)
+
+### 并发包工具类
+ConcurrentHashMap
+ThreadPoolExecutor
+
+[https://blog.csdn.net/mzh1992/article/details/60957351](https://blog.csdn.net/mzh1992/article/details/60957351)
+
+CountDownLatch是通过一个计数器来实现的，计数器的初始值为线程的数量。每当一个线程完成了自己的任务后，计数器的值就会减1。应用程序的主线程希望在负责启动框架服务的线程已经启动所有的框架服务之后再执行。
+
+CyclicBarrier可以循环使用。比如，假设我们将计数器设置为10，那么凑齐第一批10个线程之后，计数器就会归零，然后接着凑齐下一批，10个线程。司令下达命令，需要召集10个士兵，然后分别执行10个任务，需要等到士兵集合完毕，才能下达具体的任务，需要10个任务都完成，才能宣布任务结束。
 
 ## NIO
 一种同步非阻塞的高效IO交互模型，比同步阻塞IO区别如下：
@@ -166,6 +174,15 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 
 # 数据库
 ## MySQL
+### 引擎对比
+1. InnoDB支持事务
+2. InnoDB支持外键
+3. InnoDB是聚集索引，数据文件是和索引绑在一起的，必须要有主键，通过主键索引效率很高。但是辅助索引需要两次查询，先查询到主键，然后再通过主键查询到数据。因此，主键不应该过大，因为主键太大，其他索引也都会很大。而MyISAM是非聚集索引，数据文件是分离的，索引保存的是数据文件的指针。主键索引和辅助索引是独立的。
+4. InnoDB有行级锁
+
+因为MyISAM相对简单所以在效率上要优于InnoDB.如果系统读多，写少。对原子性要求低。那么MyISAM最好的选择。
+如果系统读少，写多的时候，尤其是并发写入高的时候，还需要事务安全性。InnoDB就是首选了。
+
 ### SQL性能优化
 * 对经常查询的列建立索引，为了避免全表扫描，建多了当数据改变时修改索引浪费资源
 * 使用精确列名查询而不是*
@@ -173,6 +190,11 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 * 不用NOT IN,IS NULL,NOT IS NULL，无法使用索引
 
 ## 事务隔离级别
+1. 原子性（Atomicity）：事务作为一个整体被执行 ，要么全部执行，要么全部不执行；
+2. 一致性（Consistency）：保证数据库状态从一个一致状态转变为另一个一致状态；
+3. 隔离性（Isolation）：多个事务并发执行时，一个事务的执行不应影响其他事务的执行；
+4. 持久性（Durability）：一个事务一旦提交，对数据库的修改应该永久保存。
+
 [https://www.jianshu.com/p/4e3edbedb9a8](https://www.jianshu.com/p/4e3edbedb9a8)
 
 ## 锁表、锁行
@@ -216,7 +238,11 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 ## 单例模式
 [http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/](http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/)
 
-Enum实现原理
+枚举实现原理：枚举本质上是通过普通的类来实现的，只是编译器为我们进行了处理。每个枚举类型都继承自java.lang.Enum。每个枚举常量是一个静态常量字段，使用内部类实现，该内部类继承了枚举类。
+
+静态代码块中初始化对象：懒汉  
+静态类引用：线程安全
+final方法：禁止序列化、克隆
 
 ## 管道-过滤器模式
 ## 装饰器模式
@@ -238,6 +264,9 @@ Spring是个包含一系列功能的合集，如快速开发的Spring Boot，支
 1. 发送请求——>DispatcherServlet拦截器拿到交给HandlerMapping
 2. 依次调用配置的拦截器，最后找到配置好的业务代码Handler并执行业务方法
 3. 包装成ModelAndView返回给ViewResolver解析器渲染页面
+
+### 解决循环依赖
+无参数构造器、字段注入
 
 ### Bean的生命周期
 
@@ -295,6 +324,31 @@ cglib工具：利用asm开源包，对代理对象类的class文件加载进来�
 
 # 高性能架构
 
+## Redis
+### 原理
+单线程的IO复用模型。便于IO操作，不便于排序、聚合。
+### 消息队列
+Redis自带的PUB/SUB机制，即发布-订阅模式。这种模式生产者(producer)和消费者(consumer)是1-M的关系，即一条消息会被多个消费者消费，当只有一个消费者时即可以看做一个1-1的消息队列
+
+或者PUSH/POP机制
+
+但都没有可靠的重试机制，需要自己管理与备份
+
+### 缓存击穿
+查询一个数据库中不存在的数据，比如商品详情，查询一个不存在的ID，每次都会访问DB，如果有人恶意破坏，很可能直接对DB造成过大地压力。
+
+当通过某一个key去查询数据的时候，如果对应在数据库中的数据都不存在，我们将此key对应的value设置为一个默认的值。
+### 缓存失效
+在高并发的环境下，如果此时key对应的缓存失效，此时有多个进程就会去同时去查询DB，然后再去同时设置缓存。这个时候如果这个key是系统中的热点key或者同时失效的数量比较多时，DB访问量会瞬间增大，造成过大的压力。
+
+1. 将系统中key的缓存失效时间均匀地错开　　
+2. 当我们通过key去查询数据时，首先查询缓存，如果此时缓存中查询不到，就通过分布式锁进行加锁
+### 热点key
+缓存中的某些Key(可能对应用与某个促销商品)对应的value存储在集群中一台机器，使得所有流量涌向同一机器，成为系统的瓶颈，该问题的挑战在于它无法通过增加机器容量来解决。
+
+1. 客户端热点key缓存：将热点key对应value并缓存在客户端本地，并且设置一个失效时间。
+2. 将热点key分散为多个子key，然后存储到缓存集群的不同机器上，这些子key对应的value都和热点key是一样的。
+
 ## JVM调优
 [https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html](https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html)
 
@@ -307,7 +361,6 @@ cglib工具：利用asm开源包，对代理对象类的class文件加载进来�
 
 ## 控制拿数据库连接池资源
 问题：数据库连接池就那么几个，但是有很多来拿怎么办？加个超时限制怎么加？
-
 
 ## Lucene原理
 ### 倒排索引
