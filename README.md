@@ -99,6 +99,14 @@ Set中的对象不按特定方式排序，并且没有重复对象。但它的�
 List中的对象按照索引位置排序，可以有重复对象，允许按照对象在集合中的索引位置检索对象，如通过list.get(i)方式来获得List集合中的元素。  
 Map中的每一个元素包含一个键对象和值对象，它们成对出现。键对象不能重复，值对象可以重复。
 
+### ArrayList与LinkedList区别
+
+|ArrayList|LinkedList|
+|--------|--------|
+|数组|双向链表|
+|增删的时候在扩容的时候慢，通过索引查询快，通过对象查索引慢|增删快，通过索引查询慢，通过对象查索引慢|
+|扩容因子1.5倍|无|
+
 ### HashMap和HashTable区别
 
 1. Hashtable中的方法是同步的，而HashMap中的方法在缺省情况下是非同步的。
@@ -126,6 +134,12 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 对于put操作，如果Key对应的数组元素为null，则通过CAS操作将其设置为当前值。如果Key对应的数组元素（也即链表表头或者树的根元素）不为null，则对该元素使用synchronized关键字申请锁，然后进行操作。如果该put操作使得当前链表长度超过一定阈值，则将该链表转换为树，从而提高寻址效率。
 
 ## 多线程
+### 问：你怎么理解多线程的
+
+1. 定义：多线程是指从软件或者硬件上实现多个线程并发执行的技术。具有多线程能力的计算机因有硬件支持而能够在同一时间执行多于一个线程，进而提升整体处理性能。打个比方，一个人去搬砖与几个人去搬砖，一个人只能同时搬一车，但是几个人可以同时一起搬多个车。
+2. 实现：在Java里如何实现线程，Thread、Runnable、Callable。
+3. 问题：线程可以获得更大的吞吐量，但是开销很大，线程栈空间的大小、切换线程需要的时间，所以用到线程池进行重复利用，当线程使用完毕之后就放回线程池，避免创建与销毁的开销。
+
 ### 线程的生命周期
 新建 -- 就绪 -- 运行 -- 阻塞 -- 死亡
 
@@ -133,7 +147,6 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 1. 继承Thread类
 2. 实现Runnable接口
 3. 扩展一种：实现Callable接口。这个得和线程池结合
-
 
 ### 如何实现同步
 [https://fangjian0423.github.io/2016/04/18/java-synchronize-way/](https://fangjian0423.github.io/2016/04/18/java-synchronize-way/)
@@ -245,6 +258,9 @@ CyclicBarrier可以循环使用。比如，假设我们将计数器设置为10�
 final方法：禁止序列化、克隆
 
 ## 管道-过滤器模式
+
+[http://www.wangtianyi.top/blog/2017/10/08/shi-yao-shi-hou-neng-yong-shang-she-ji-mo-shi/](http://www.wangtianyi.top/blog/2017/10/08/shi-yao-shi-hou-neng-yong-shang-she-ji-mo-shi/)
+
 ## 装饰器模式
 动态地将责任附加到对象上，如果要拓展功能，装饰器提供了比继承更有弹性的方式。
 
