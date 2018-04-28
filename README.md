@@ -152,6 +152,25 @@ Java 8的ConcurrentHashMap同样是通过Key的哈希值与数组长度取模确
 ### 如何实现同步
 [https://fangjian0423.github.io/2016/04/18/java-synchronize-way/](https://fangjian0423.github.io/2016/04/18/java-synchronize-way/)
 
+### 锁
+#### 锁是什么
+锁是在不同线程竞争资源的情况下来分配不同线程执行方式的同步控制工具，只有线程获取到锁之后才能访问同步代码，否则等待其他线程使用结束后释放锁
+
+#### synchronized
+通常和wait，notify，notifyAll一块使用。    
+wait：释放占有的对象锁，释放CPU，进入等待队列只能通过notify/all继续该线程。  
+sleep：则是释放CPU，但是不释放占有的对象锁，可以在sleep结束后自动继续该线程。  
+notify：唤醒等待队列中的一个线程，使其获得锁进行访问。  
+notifyAll：唤醒等待队列中等待该对象锁的全部线程，让其竞争去获得锁。
+
+#### lock
+拥有synchronize相同的语义，但是添加一些其他特性，如中断锁等候和定时锁等候，所以可以使用lock代替synchronize，但必须手动加锁释放锁
+
+#### 两者的区别
+性能：资源竞争激励的情况下，lock性能会比synchronize好，竞争不激励的情况下，synchronize比lock性能好。  
+锁机制：synchronize是在JVM层面实现的，系统会监控锁的释放与否。lock是代码实现的，需要手动释放。    
+用法：synchronize可以用在代码块上，方法上。lock通过代码实现，有更精确的线程语义。
+
 ### volatile
 功能：
 
