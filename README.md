@@ -469,20 +469,37 @@ phantomjs + selenium
 图像识别
 
 ### 如何实现数据库连接池
-1. 连接池的建立。使用Vector存储连接，连接池在池中创建了几个连接对象等待使用，连接池中的连接不能随意创建和关闭，这样避免了连接随意建立和关闭造成的系统开销
+1. 连接池的建立。使用CopyOnWriteArrayList存储连接，连接池在池中创建了几个连接对象等待使用，连接池中的连接不能随意创建和关闭，这样避免了连接随意建立和关闭造成的系统开销
 2. 连接池的管理。当客户请求数据库连接时，首先查看连接池中是否有空闲连接，如果存在空闲连接，则将连接分配给客户使用；如果没有空闲连接，则查看当前所开的连接数是否已经达到最大连接数，如果没达到就重新创建一个连接给请求的客户；如果达到就按设定的最大等待时间进行等待，如果超出最大等待时间，则抛出异常给客户。
 3. 连接池的关闭。当应用程序退出时，关闭连接池中所有的连接，释放连接池相关的资源，该过程正好与创建相反。
 
-#### 并发、性能问题
-synchronized、lock。
+#### [并发、性能问题](http://0x0010.com/2017/09/performance-promote-of-using-threadlocal-in-hikaricp/)
+使用synchronized、lock可解决多线程分发与回收线程问题。
 
-但为了提高性能，可进行以下方面的优化：
+但性能问题还是很大，主要是因为线程的同步操作涉及到线程的启动、停止、上下文切换，所以为了提高性能，可进行以下方面的优化：  
+避免同步操作，更换为其他操作。使用ThreadLocal将线程池的副本保存在每个线程中，同时结合CAS处理连接的分发与回收
 
-1. Vector换成CopyOnWriteArrayList
-2. 避免锁竞争的耗时，应该对连接的管理使用CAS操作；使用ThreadLocal将得到的数据库连接与线程绑定，避免映射关系的同步管理与性能问题
+#### 增加连接超时功能
+参考HikariCP中CurrentBag中borrow方法：
 
-#### 事务处理
-在Java语言中，Connection类本身提供了对事务的支持，可以通过设置Connection的AutoCommit属性为 false,然后显式的调用commit或rollback方法来实现。
+```
+timeout = timeUnit.toNanos(timeout);
+ do {
+    final long start = currentTime();
+    // 如果队列中没有可以用的连接实例，返回null
+    // 如果队列中有可以用的实例，那么把状态改成USE并且返回
+    final T bagEntry = handoffQueue.poll(timeout, NANOSECONDS);
+    if (bagEntry == null || bagEntry.compareAndSet(STATE_NOT_IN_USE, STATE_IN_USE)) {
+       return bagEntry;
+    }
+	 
+	 // timeout循环被减小，直到大于0.01毫秒
+    timeout -= elapsedNanos(start);
+ } while (timeout > 10_000);
+
+```
+
+
 
 ### [如何存储查询大量的HTML文件](https://www.zhihu.com/question/26504749)
 
