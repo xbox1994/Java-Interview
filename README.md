@@ -19,6 +19,7 @@ PS：除开知识点，一定要准备好1分钟~3分钟的个人介绍，以及
 ### [高性能](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高性能.md)
 ### 分布式（正在完善）
 * [缓存](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-缓存.md)
+* [锁](https://blog.csdn.net/xlgen157387/article/details/79036337)
 ### [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
 搜索引擎是因为个人项目关系，那个搜索引擎非常简单，但有很多东西可以问到，可选择性学习借鉴，了解到对项目是如何提问的，还有问题的深度
 ### [在线编程](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程.md)
