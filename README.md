@@ -19,7 +19,7 @@ PS：除开知识点，一定要准备好以下内容：
 ### 数据库
 * [MySQL](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-MySQL.md)
 ### [设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/设计模式.md)
-### [TCP](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/TCP.md)
+### [TCP](https://blog.csdn.net/qq_18425655/article/details/52163228)
 ### [数据结构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据结构.md)
 ### [高性能](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高性能.md)
 ### 分布式
