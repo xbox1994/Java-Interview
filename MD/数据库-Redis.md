@@ -1,3 +1,4 @@
+
 ## Redis
 ### 原理
 单线程的IO复用模型。便于IO操作，不便于排序、聚合。
@@ -24,13 +25,3 @@ Redis 还可以同时使用 AOF 持久化和 RDB 持久化。 在这种情况下
 
 1. 客户端热点key缓存：将热点key对应value并缓存在客户端本地，并且设置一个失效时间。
 2. 将热点key分散为多个子key，然后存储到缓存集群的不同机器上，这些子key对应的value都和热点key是一样的。
-
-## JVM调优
-[https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html](https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html)
-
-## 高并发怎么处理
-问：比较耗CPU的任务摆在这里，程序也无法提升性能了，该怎么办？
-
-1. 先判断能否使用缓存，还是重新耗费CPU资源来创建一个
-2. 用偏重CPU性能的机器来做这个功能的专项负载均衡
-3. 请求太多的话，搞个消息队列排着，慢慢消费，同时前端提示需要一会才行

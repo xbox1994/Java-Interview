@@ -18,10 +18,11 @@ PS：除开知识点，一定要准备好以下内容：
 * [Spring](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Web框架-Spring.md)
 ### 数据库
 * [MySQL](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-MySQL.md)
+* [Redis](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-Redis.md)
 ### [设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/设计模式.md)
 ### [TCP](https://blog.csdn.net/qq_18425655/article/details/52163228)
 ### [数据结构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据结构.md)
-### [高性能](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高性能.md)
+### [高并发](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
 ### 分布式
 * [CAP理论](https://www.zhihu.com/question/54105974)
 * [缓存](https://www.zhihu.com/question/21419897)

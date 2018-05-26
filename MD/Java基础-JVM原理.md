@@ -92,3 +92,6 @@ GC Roots包括：虚拟机栈中引用的对象、方法区中类静态属性引
 1. 调用System.gc时，系统建议执行Full GC，但是不必然执行
 2. 老年代空间不足（通过Minor GC后进入老年代的大小大于老年代的可用内存）
 3. 方法区空间不足
+
+## JVM调优
+[https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html](https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html)
