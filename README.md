@@ -20,7 +20,7 @@ PS：除开知识点，一定要准备好以下内容：
 * [MySQL](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-MySQL.md)
 * [Redis](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-Redis.md)
 ### [设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/设计模式.md)
-### [TCP](https://blog.csdn.net/qq_18425655/article/details/52163228)
+### [TCP](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/TCP.md)
 ### [数据结构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据结构.md)
 ### [高并发](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
 ### 分布式
