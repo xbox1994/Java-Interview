@@ -6,18 +6,8 @@
 3. 实现：在Java里如何实现线程，Thread、Runnable、Callable。
 4. 问题：线程可以获得更大的吞吐量，但是开销很大，线程栈空间的大小、切换线程需要的时间，所以用到线程池进行重复利用，当线程使用完毕之后就放回线程池，避免创建与销毁的开销。
 
-### 线程的生命周期
-新建 -- 就绪 -- 运行 -- 阻塞 -- 死亡
-
-### 多线程实现方案
-1. 继承Thread类
-2. 实现Runnable接口
-3. 扩展一种：实现Callable接口。这个得和线程池结合
-
 ### 如何实现同步
 [https://fangjian0423.github.io/2016/04/18/java-synchronize-way/](https://fangjian0423.github.io/2016/04/18/java-synchronize-way/)
-
-**synchronized / lock / CAS**
 
 ### 锁
 #### 锁是什么
@@ -37,6 +27,10 @@ notifyAll：唤醒等待队列中等待该对象锁的全部线程，让其竞�
 * 性能：资源竞争激烈的情况下，lock性能会比synchronized好；如果竞争资源不激烈，两者的性能是差不多的
 * 用法：synchronized可以用在代码块上，方法上。lock通过代码实现，有更精确的线程语义，但需要手动释放，还提供了多样化的同步，比如公平锁、有时间限制的同步、可以被中断的同步
 * 原理：synchronized在JVM级别实现，会在生成的字节码中加上monitorenter和monitorexit，任何对象都有一个monitor与之相关联，当且一个monitor被持有之后，他将处于锁定状态。monitor是JVM的一个同步工具，synchronized还通过内存指令屏障来保证共享变量的可见性。lock使用AQS在代码级别实现，通过Unsafe.park调用操作系统内核进行阻塞
+* 功能：比如ReentrantLock功能更强大
+  1. ReentrantLock可以指定是公平锁还是非公平锁，而synchronized只能是非公平锁，所谓的公平锁就是先等待的线程先获得锁
+  2. ReentrantLock提供了一个Condition（条件）类，用来实现分组唤醒需要唤醒的线程们，而不是像synchronized要么随机唤醒一个线程要么唤醒全部线程
+  3. ReentrantLock提供了一种能够中断等待锁的线程的机制，通过lock.lockInterruptibly()来实现这个机制
 
 **我们写同步的时候，优先考虑synchronized，如果有特殊需要，再进一步优化。ReentrantLock和Atomic如果用的不好，不仅不能提高性能，还可能带来灾难。**
 
@@ -53,7 +47,6 @@ notifyAll：唤醒等待队列中等待该对象锁的全部线程，让其竞�
 读写锁将对一个资源（比如文件）的访问分成了2个锁，一个读锁和一个写锁。正因为有了读写锁，才使得多个线程之间的读操作不会发生冲突。
 ReadWriteLock就是读写锁，它是一个接口，ReentrantReadWriteLock实现了这个接口。可以通过readLock()获取读锁，通过writeLock()获取写锁。
 
-
 ### volatile
 功能：
 
@@ -64,14 +57,16 @@ ReadWriteLock就是读写锁，它是一个接口，ReentrantReadWriteLock实现
 使用`ThreadLocal<UserInfo> userInfo = new ThreadLocal<UserInfo>()`的方式，让每个线程内部都会维护一个ThreadLocalMap，里边包含若干了 Entry（K-V 键值对），每次存取都会先的都当前线程，然后得到该线程对象中的Map，然后与Map交互。
 
 ### 线程池
-[ThreadPoolExecutor](https://www.jianshu.com/p/edd7cb4eafa0)
+#### 起源
+new Thread弊端：
+
+* 每次启动线程都需要new Thread新建对象与线程，性能差。线程池能重用存在的线程，减少对象创建、回收的开销。
+* 线程缺乏统一管理，可以无限制的新建线程，导致OOM。线程池可以控制可以创建、执行的最大并发线程数。
+* 缺少工程实践的一些高级的功能如定期执行、线程中断。线程池提供定期执行、并发数控制功能
+
+[http://www.wangtianyi.top/blog/2018/05/08/javagao-bing-fa-wu-xian-cheng-chi/](http://www.wangtianyi.top/blog/2018/05/08/javagao-bing-fa-wu-xian-cheng-chi/)  
+[https://www.jianshu.com/p/edd7cb4eafa0](https://www.jianshu.com/p/edd7cb4eafa0)
 
 ### 并发包工具类
-ConcurrentHashMap
-ThreadPoolExecutor
-
+[http://www.wangtianyi.top/blog/2018/05/01/javagao-bing-fa-xi-lie-si-:juc/](http://www.wangtianyi.top/blog/2018/05/01/javagao-bing-fa-xi-lie-si-:juc/)  
 [https://blog.csdn.net/mzh1992/article/details/60957351](https://blog.csdn.net/mzh1992/article/details/60957351)
-
-CountDownLatch是通过一个计数器来实现的，计数器的初始值为线程的数量。每当一个线程完成了自己的任务后，计数器的值就会减1。应用程序的主线程希望在负责启动框架服务的线程已经启动所有的框架服务之后再执行。
-
-CyclicBarrier可以循环使用。比如，假设我们将计数器设置为10，那么凑齐第一批10个线程之后，计数器就会归零，然后接着凑齐下一批，10个线程。司令下达命令，需要召集10个士兵，然后分别执行10个任务，需要等到士兵集合完毕，才能下达具体的任务，需要10个任务都完成，才能宣布任务结束。
