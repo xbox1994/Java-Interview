@@ -29,6 +29,7 @@ PS：除开知识点，一定要准备好以下内容：
 * [锁](https://www.jianshu.com/p/c2b4aa7a12f1)
 * [事务](https://www.cnblogs.com/xybaby/p/7465816.html)
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
+* [存储](https://blog.csdn.net/prettyeva/article/details/60146668)
 ### [在线编程](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程.md)
 ### [Linux](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Linux.md)
 ----------------
