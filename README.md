@@ -24,7 +24,6 @@ PS：除开知识点，一定要准备好以下内容：
 ### [数据结构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据结构.md)
 ### [高并发](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
 ### 分布式
-* [CAP理论](https://www.zhihu.com/question/54105974)
 * [缓存](https://www.zhihu.com/question/21419897)
 * [锁](https://www.jianshu.com/p/c2b4aa7a12f1)
 * [事务](https://mp.weixin.qq.com/s/RDnf637MY0IVgv2NpNVByw)
@@ -36,4 +35,4 @@ PS：除开知识点，一定要准备好以下内容：
 ### [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
 搜索引擎是因为个人项目关系，那个搜索引擎非常简单，但有很多东西可以问到，可选择性学习借鉴，了解到对项目是如何提问的，还有问题的深度
 ### [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
-### [问题排查](https://www.zhihu.com/question/36402618)
+### [问题排查](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/问题排查.md)
