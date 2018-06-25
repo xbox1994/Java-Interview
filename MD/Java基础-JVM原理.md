@@ -51,10 +51,11 @@ new、静态字段或方法被使用、反射、父类、main函数调用
 扩展类加载器：它负责加载<JAVA_HOME>/lib/ext目录下或者由系统变量-Djava.ext.dir指定位路径中的类库，开发者可以直接使用标准扩展类加载器  
 系统类加载器：它负责加载系统类路径java -classpath或-D java.class.path 指定路径下的类库
 
-如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是**双亲委派模式**。
+定义：如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是**双亲委派模式**。
 
-采用双亲委派模式的是好处是Java类随着它的类加载器一起具备了一种带有优先级的层次关系，通过这种层级关可以避免类的重复加载，当父亲已经加载了该类时，就没有必要子ClassLoader再加载一次。其次防止恶意覆盖Java核心API。
+优点：采用双亲委派模式的是好处是Java类随着它的类加载器一起具备了一种带有优先级的层次关系，通过这种层级关可以避免类的重复加载，当父亲已经加载了该类时，就没有必要子ClassLoader再加载一次。其次防止恶意覆盖Java核心API。
 
+破坏双亲委派模式：是为了实现自己的类加载逻辑，达到比如[热部署重加载](https://blog.csdn.net/u010833547/article/details/54312052)的功能，默认加载器在加载类的时候会检测该类是否已经存在，如果存在则不会去加载，如果不存在则加载该类并缓存。所以默认的ClassLoader是无法实现热替换的。换句话说，要实现热替换就必须实现一个自己的MyClassLoader。双亲委派的逻辑是写在ClassLoader中的loadClass中的，所以继承ClassLoader然后覆盖loadClass方法，读取自己允许热加载的那些类吧~
 
 ### 内存分配（堆上的内存分配）
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j2.jpg)
@@ -92,6 +93,18 @@ GC Roots包括：虚拟机栈中引用的对象、方法区中类静态属性引
 1. 调用System.gc时，系统建议执行Full GC，但是不必然执行
 2. 老年代空间不足（通过Minor GC后进入老年代的大小大于老年代的可用内存）
 3. 方法区空间不足
+
+## Java内存模型
+主内存：所有变量都保存在主内存中  
+工作内存：每个线程的独立内存，保存了该线程使用到的变量的主内存副本拷贝，线程对变量的操作必须在工作内存中进行
+
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j12.png)
+
+每个线程都有自己的本地内存共享副本，如果A线程要更新主内存还要让B线程获取更新后的变量，那么需要：
+
+1. 将本地内存A中更新共享变量
+2. 将更新的共享变量刷新到主内存中
+3. 线程B从主内存更新最新的共享变量
 
 ## JVM调优
 [https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html](https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html)

@@ -6,8 +6,9 @@
 3. 实现：在Java里如何实现线程，Thread、Runnable、Callable。
 4. 问题：线程可以获得更大的吞吐量，但是开销很大，线程栈空间的大小、切换线程需要的时间，所以用到线程池进行重复利用，当线程使用完毕之后就放回线程池，避免创建与销毁的开销。
 
-### 如何实现同步
-[https://fangjian0423.github.io/2016/04/18/java-synchronize-way/](https://fangjian0423.github.io/2016/04/18/java-synchronize-way/)
+### 线程同步/线程间通信的方式
+https://fangjian0423.github.io/2016/04/18/java-synchronize-way/  
+https://github.com/crossoverJie/Java-Interview/blob/master/MD/concurrent/thread-communication.md
 
 ### 锁
 #### 锁是什么
