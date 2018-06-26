@@ -98,7 +98,7 @@ GC Roots包括：虚拟机栈中引用的对象、方法区中类静态属性引
 主内存：所有变量都保存在主内存中  
 工作内存：每个线程的独立内存，保存了该线程使用到的变量的主内存副本拷贝，线程对变量的操作必须在工作内存中进行
 
-![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j12.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j12.jpg)
 
 每个线程都有自己的本地内存共享副本，如果A线程要更新主内存还要让B线程获取更新后的变量，那么需要：
 
