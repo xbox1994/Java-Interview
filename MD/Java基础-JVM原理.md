@@ -106,5 +106,19 @@ GC Roots包括：虚拟机栈中引用的对象、方法区中类静态属性引
 2. 将更新的共享变量刷新到主内存中
 3. 线程B从主内存更新最新的共享变量
 
+## [happens-before](https://www.cnblogs.com/chenssy/p/6393321.html)
+我们无法就所有场景来规定某个线程修改的变量何时对其他线程可见，但是我们可以指定某些规则，这规则就是happens-before。特别关注在多线程之间的内存可见性。
+
+它是判断数据是否存在竞争、线程是否安全的主要依据，依靠这个原则，我们解决在并发环境下两操作之间是否可能存在冲突的所有问题。
+
+1. 程序次序规则：一个线程内，按照代码顺序，书写在前面的操作先行发生于书写在后面的操作；
+2. 锁定规则：一个unLock操作先行发生于后面对同一个锁额lock操作；
+3. volatile变量规则：对一个变量的写操作先行发生于后面对这个变量的读操作；
+4. 传递规则：如果操作A先行发生于操作B，而操作B又先行发生于操作C，则可以得出操作A先行发生于操作C；
+5. 线程启动规则：Thread对象的start()方法先行发生于此线程的每个一个动作；
+6. 线程中断规则：对线程interrupt()方法的调用先行发生于被中断线程的代码检测到中断事件的发生；
+7. 线程终结规则：线程中所有的操作都先行发生于线程的终止检测，我们可以通过Thread.join()方法结束、Thread.isAlive()的返回值手段检测到线程已经终止执行；
+8. 对象终结规则：一个对象的初始化完成先行发生于他的finalize()方法的开始；
+
 ## JVM调优
 [https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html](https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html)
