@@ -19,7 +19,7 @@
 
 * 对经常查询的列建立索引，但索引建多了当数据改变时修改索引会增大开销
 * 使用精确列名查询而不是*，特别是当数据量大的时候
-* 减少[嵌套查询](http://www.cnblogs.com/zhengyun_ustc/p/slowquery3.html)，使用Join替代
+* 减少[子查询](http://www.cnblogs.com/zhengyun_ustc/p/slowquery3.html)，使用Join替代
 * 不用NOT IN，因为会使用全表扫描而不是索引；不用IS NULL，NOT IS NULL，因为会使索引、索引统计和值更加复杂，并且需要额外一个字节的存储空间。
 
 问：有个表特别大，字段是姓名、年龄、班级，如果调用`select * from table where name = xxx and age = xxx`该如何通过建立索引的方式优化查询速度？  
@@ -29,7 +29,7 @@
 答：在xxx列上建立索引，因为索引是B+树顺序排列的，锁在下次查询的时候就会使用索引来查询到最大的值是哪个
 
 问：如何对分页进行优化？
-答：`SELECT * FROM big_table LIMIT 1000000,20`这条语句会查询出1000020条的所有数据然后丢弃掉前1000000条，可以改进成`SELECT a.* FROM big_table a, (select id from big_table where id >= 1000000 LIMIT 0,20) b where a.id=b.id`是用过滤条件将不需要查询的数据直接去除
+答：`SELECT * FROM big_table order by xx LIMIT 1000000,20`，这条语句会查询出1000020条的所有数据然后丢弃掉前1000000条，为了避免全表扫描的操作，在order by的列上加**索引**就能通过扫描索引来查询。但是这条语句会查询还是会扫描1000020条，还能改进成`select id from big_table where id >= 1000000 order by xx LIMIT 0,20`，用ID作为**过滤**条件将不需要查询的数据直接去除。
 
 ## 事务隔离级别
 1. 原子性（Atomicity）：事务作为一个整体被执行 ，要么全部执行，要么全部不执行；
@@ -65,5 +65,6 @@
 1. 索引需要占物理空间。
 2. 当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，降低了数据的维护速度。
 
-#### 使用场景
-如果某个字段，或一组字段会出现在一个会被频繁调用的 WHERE 子句中，那么它们应该是被索引的，这样会更快的得到结果。为了避免意外的发生，需要恰当地使用唯一索引
+#### 如何选择合适的列建立索引
+1. WHERE / GROUP BY / ORDER BY / ON 的列
+2. 离散度大（不同的数据多）的列
