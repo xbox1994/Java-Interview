@@ -8,6 +8,12 @@
 |当数组无法容纳下此次添加的元素时进行扩容|无|
 |扩容之后容量为原来的1.5倍|无|
 
+### ArrayList与Vector区别 
+
+1. Vector是线程安全的，源码中有很多的synchronized可以看出，而ArrayList不是。导致Vector效率无法和ArrayList相比； 
+2. ArrayList和Vector都采用线性连续存储空间，当存储空间不足的时候，ArrayList默认增加为原来的50%，Vector默认增加为原来的一倍； 
+3. Vector可以设置capacityIncrement，而ArrayList不可以，从字面理解就是capacity容量，Increment增加，容量增长的参数。
+
 ### HashMap
 [面试必问的几个点](http://www.importnew.com/7099.html)
 
