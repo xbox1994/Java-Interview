@@ -30,13 +30,12 @@ PS：除开知识点，一定要准备好以下内容：
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
 * [存储](https://blog.csdn.net/prettyeva/article/details/60146668)
 * [限流](https://crossoverjie.top/2018/04/28/sbc/sbc7-Distributed-Limit)
-* [ID生成方式](https://github.com/crossoverJie/Java-Interview/blob/master/MD/ID-generator.md)
+* [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/ID生成方式.md)
 * [高并发场景解决思路](http://www.wangtianyi.top/blog/2018/05/11/javaduo-xian-cheng-yu-gao-bing-fa-liu-gao-bing-fa-jie-jue-si-lu/)
 ### [在线编程](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程.md)
 ### [Linux](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Linux.md)
 ----------------
 ### [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
-搜索引擎是因为个人项目关系，那个搜索引擎非常简单，但有很多东西可以问到，可选择性学习借鉴，了解到对项目是如何提问的，还有问题的深度
 ### [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
 ### [问题排查](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/问题排查.md)
 ### [从按下回车开始，到浏览器呈现出网页之间的发生了什么](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/)
