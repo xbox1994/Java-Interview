@@ -2,8 +2,8 @@
 ## JVM原理
 JVM本身是介于JAVA编译器和操作系统之间的程序，这个程序提供了一个无视操作系统和硬件平台的运行环境
 
-### 内存分配
-以1.8为例，内存区域如下：：
+### Java内存区域的分配
+以1.8为例，内存区域如下：
 
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/j1.jpg)
 
@@ -17,7 +17,7 @@ JVM本身是介于JAVA编译器和操作系统之间的程序，这个程序提�
 每个线程都会有一块私有的数据区： 
 
 1.	虚拟机栈: 每个方法执行时在其中创建一个栈帧，用于存储局部变量、操作数栈、动态链接、方法出口等信息
-2.	本地方法栈: 用于存放执行native方法的运行数据
+2.	本地方法栈: 功能与虚拟机栈相同，为native方法服务
 3.	程序计数器: 存放当前正在执行的指令的地址
 
 直接内存：
@@ -61,7 +61,7 @@ new、静态字段或方法被使用、反射、父类、main函数调用
 三次大型破坏双亲委派模式的事件：
 
 1. 在双亲委派模式出来之前，用户继承ClassLoader就是为了重写loadClass方法，但双亲委派模式需要这个方法，所以1.2之后添加了findClass供以后的用户重写
-2. 如果基础类要调回用户的代码，如JNDI/JDBC需要调用ClassPath下的自己的代码来进行资源管理，Java团队添加了一个线程上下文加载器，如果该加载器没有被设置过，那么僵默认是应用程序类加载器
+2. 如果基础类要调回用户的代码，如JNDI/JDBC需要调用ClassPath下的自己的代码来进行资源管理，Java团队添加了一个线程上下文加载器，如果该加载器没有被设置过，那么就默认是应用程序类加载器
 3. 为了实现代码热替换，OSGi是为了实现自己的类加载逻辑，用平级查找的逻辑替换掉了向下传递的逻辑。但其实可以不破坏双亲委派逻辑而是自定义类加载器来达到代码热替换。比如[这篇文章](https://www.cnblogs.com/pfxiong/p/4070462.html)
 
 ### 内存分配（堆上的内存分配）
@@ -132,4 +132,4 @@ GC Roots包括：虚拟机栈中引用的对象、方法区中类静态属性引
 8. 对象终结规则：一个对象的初始化完成先行发生于他的finalize()方法的开始；
 
 ## JVM调优
-[https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html](https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html)
+https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html
