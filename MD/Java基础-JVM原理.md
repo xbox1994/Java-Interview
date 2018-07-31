@@ -132,4 +132,5 @@ GC Roots包括：虚拟机栈中引用的对象、方法区中类静态属性引
 8. 对象终结规则：一个对象的初始化完成先行发生于他的finalize()方法的开始；
 
 ## JVM调优
-https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html
+http://www.wangtianyi.top/blog/2018/07/25/jvmdiao-you-ru-men-(yi-):ji-chu-zhi-shi/  
+http://www.wangtianyi.top/blog/2018/07/27/jvmdiao-you-ru-men-(er-):shi-zhan-diao-you-parallelshou-ji-qi/  
