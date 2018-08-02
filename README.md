@@ -19,10 +19,14 @@ PS：除开知识点，一定要准备好以下内容：
 ### 数据库
 * [MySQL](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-MySQL.md)
 * [Redis](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-Redis.md)
-### [设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/设计模式.md)
-### [TCP](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/TCP.md)
-### [数据结构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据结构.md)
-### [高并发](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
+### 设计模式
+* [常用的几个设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/设计模式.md)
+### 网络协议
+* [TCP/IP](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/TCP.md)
+### 数据结构
+* [排序算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/排序算法.md)
+### 高并发
+* [解决思路](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
 ### 分布式
 * [缓存](https://www.zhihu.com/question/21419897)
 * [锁](https://www.jianshu.com/p/c2b4aa7a12f1)
@@ -31,11 +35,12 @@ PS：除开知识点，一定要准备好以下内容：
 * [存储](https://blog.csdn.net/prettyeva/article/details/60146668)
 * [限流](https://crossoverjie.top/2018/04/28/sbc/sbc7-Distributed-Limit)
 * [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/ID生成方式.md)
-* [高并发场景解决思路](http://www.wangtianyi.top/blog/2018/05/11/javaduo-xian-cheng-yu-gao-bing-fa-liu-gao-bing-fa-jie-jue-si-lu/)
-### [在线编程](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程.md)
-### [Linux](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Linux.md)
+### 在线编程
+* [算法题](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程.md)
+### Linux
+* [Linux命令](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Linux.md)
 ----------------
-### [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
 ### [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
+### [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
 ### [问题排查](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/问题排查.md)
 ### [从按下回车开始，到浏览器呈现出网页之间的发生了什么](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/)
