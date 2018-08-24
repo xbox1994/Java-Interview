@@ -28,11 +28,9 @@ PS：除开知识点，一定要准备好以下内容：
 ### 高并发
 * [解决思路](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
 ### 分布式
-* [缓存](https://www.zhihu.com/question/21419897)
 * [锁](https://www.jianshu.com/p/c2b4aa7a12f1)
-* [事务](https://mp.weixin.qq.com/s/RDnf637MY0IVgv2NpNVByw)
+* [事务](https://mp.weixin.qq.com/s/gg4q_53eiHCI3OUWzN7eWg)
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
-* [存储](https://blog.csdn.net/prettyeva/article/details/60146668)
 * [限流](https://crossoverjie.top/2018/04/28/sbc/sbc7-Distributed-Limit)
 * [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/ID生成方式.md)
 ### 在线编程
@@ -44,8 +42,8 @@ PS：除开知识点，一定要准备好以下内容：
 ### Linux
 * [Linux命令](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Linux.md)
 ### 项目举例
-### [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
-### [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
+* [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
+* [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
 ## 其他面试问题
-### [从按下回车开始，到浏览器呈现出网页之间的发生了什么](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/)
-### [问题排查](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/问题排查.md)
+* [从按下回车开始，到浏览器呈现出网页之间的发生了什么](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/)
+* [问题排查](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/问题排查.md)
