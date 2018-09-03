@@ -27,7 +27,6 @@ public class LRUCache2 {
     private void put(int key, int value) {
         if (cacheMap.containsKey(key)) {
             recentlyList.remove((Integer) key);
-            recentlyList.add(key);
         }
 
         if (cacheMap.size() == capacity) {
