@@ -13,7 +13,6 @@ PS：除开知识点，一定要准备好以下内容：
 * [JVM原理](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Java基础-JVM原理.md)
 * [集合](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Java基础-集合.md)
 * [多线程](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Java基础-多线程.md)
-* [NIO](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Java基础-NIO.md)
 ### Web框架
 * [Spring](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Web框架-Spring.md)
 ### 数据库
@@ -28,11 +27,22 @@ PS：除开知识点，一定要准备好以下内容：
 ### 高并发
 * [解决思路](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
 ### 分布式
+* [CAP理论](https://www.zhihu.com/question/54105974)
 * [锁](https://www.jianshu.com/p/c2b4aa7a12f1)
 * [事务](https://mp.weixin.qq.com/s/gg4q_53eiHCI3OUWzN7eWg)
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
 * [限流](https://crossoverjie.top/2018/04/28/sbc/sbc7-Distributed-Limit)
 * [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/ID生成方式.md)
+* [四层、七层负载均衡的区别](https://www.jianshu.com/p/fa937b8e6712)
+###微服务
+* [微服务介绍](http://www.wangtianyi.top/blog/2017/04/16/microservies-1-introduction-to-microservies/)
+* [服务发现原理](http://www.wangtianyi.top/blog/2017/05/15/zai-wei-fu-wu-jia-gou-zhong-de-fu-wu-fa-xian-ji-zhi/)
+* [服务发现Consul](http://sjyuan.cc/service-registration-and-discovery/)
+* [API网关原理](http://www.wangtianyi.top/blog/2017/04/22/yi-microservies-2-building-microservices-using-an-api-gateway/)
+* [API网关Zuul](http://sjyuan.cc/api-gateway-with-zuul/)
+* [服务配置中心](http://sjyuan.cc/service-config-server/)
+* [服务容错保护](http://sjyuan.cc/service-fault-tolerant-protected-with-hytrix/)
+* [BFF](http://sjyuan.cc/bff/)
 ### 在线编程
 * [二叉树反转](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-二叉树反转.md)
 * [LRU淘汰算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-LRU淘汰算法.md)
