@@ -34,6 +34,7 @@ PS：除开知识点，一定要准备好以下内容：
 * [限流](https://crossoverjie.top/2018/04/28/sbc/sbc7-Distributed-Limit)
 * [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/ID生成方式.md)
 * [四层、七层负载均衡的区别](https://www.jianshu.com/p/fa937b8e6712)
+* [一致性算法](https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md)
 ### 微服务
 * [微服务介绍](http://www.wangtianyi.top/blog/2017/04/16/microservies-1-introduction-to-microservies/)
 * [服务发现原理](http://www.wangtianyi.top/blog/2017/05/15/zai-wei-fu-wu-jia-gou-zhong-de-fu-wu-fa-xian-ji-zhi/)
@@ -52,9 +53,10 @@ PS：除开知识点，一定要准备好以下内容：
 * [排序打印关键字](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-排序打印关键字.md)
 ### Linux
 * [Linux命令](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Linux.md)
+### 问题排查
+* [Java生产环境下问题排查](http://www.wangtianyi.top/blog/2018/07/20/javasheng-chan-huan-jing-xia-wen-ti-pai-cha/)
 ### 项目举例
 * [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
 * [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
-### 其他面试问题
+### 其他
 * [从按下回车开始，到浏览器呈现出网页之间的发生了什么](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/)
-* [问题排查](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/问题排查.md)
