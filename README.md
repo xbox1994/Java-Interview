@@ -19,21 +19,21 @@ PS：除开知识点，一定要准备好以下套路：
 ### 数据库
 * [MySQL](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-MySQL.md)
 * [Redis](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-Redis.md)
-### 设计模式
-* [常用的几个设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/设计模式.md)
-### 网络协议
-* [TCP & HTTP](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/TCP&HTTP.md)
-### 数据结构
-* [排序算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/排序算法.md)
-### 高并发
-* [解决思路](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
+### 通用基础
+* [Linux](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-Linux.md)
+* [进程与线程](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-进程与线程.md)
+* [TCP & HTTP](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-TCP&HTTP.md)
+* [排序算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-排序算法.md)
+* [常用的几个设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-设计模式.md)
+* [从URL到看到网页的过程](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/)
 ### 分布式
+* [高并发解决思路](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
 * [CAP理论](https://www.zhihu.com/question/54105974)
 * [锁](https://www.jianshu.com/p/c2b4aa7a12f1)
 * [事务](https://mp.weixin.qq.com/s/gg4q_53eiHCI3OUWzN7eWg)
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
 * [限流](https://crossoverjie.top/2018/04/28/sbc/sbc7-Distributed-Limit)
-* [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/ID生成方式.md)
+* [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-ID生成方式.md)
 * [四层、七层负载均衡的区别](https://www.jianshu.com/p/fa937b8e6712)
 * [一致性算法](https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md)
 ### 微服务
@@ -53,12 +53,8 @@ PS：除开知识点，一定要准备好以下套路：
 * [第k大个数](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-第k大个数.md)
 * [交替打印奇偶数](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-交替打印奇偶数.md)
 * [排序打印关键字](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-排序打印关键字.md)
-### Linux
-* [Linux命令](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Linux.md)
 ### 问题排查
 * [Java生产环境下问题排查](http://www.wangtianyi.top/blog/2018/07/20/javasheng-chan-huan-jing-xia-wen-ti-pai-cha/)
 ### 项目举例
 * [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
 * [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
-### 其他
-* [从按下回车开始，到浏览器呈现出网页之间的发生了什么](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/)
