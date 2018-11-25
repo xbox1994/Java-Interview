@@ -45,9 +45,12 @@ PS：除开知识点，一定要准备好以下套路：
 * [服务容错保护](http://sjyuan.cc/service-fault-tolerant-protected-with-hytrix/)
 ### 在线编程
 * [二叉树反转](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-二叉树反转.md)
+* [链表相加](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-链表相加.md)
 * [LRU淘汰算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-LRU淘汰算法.md)
-* [连续子数组最大和](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-连续子数组最大和.md)
+* [连续子数组最大和](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-合并有序数组.md)
+* [合并有序数组](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-连续子数组最大和.md)
 * [快速排序](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-快速排序.md)
+* [第k大个数](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-第k大个数.md)
 * [交替打印奇偶数](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-交替打印奇偶数.md)
 * [排序打印关键字](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/在线编程-排序打印关键字.md)
 ### Linux
