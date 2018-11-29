@@ -59,3 +59,6 @@ PS：除开知识点，一定要准备好以下套路：
 ### 项目举例
 * [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
 * [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
+### 系统设计
+* [从面试者角度设计一个系统设计题](http://www.wangtianyi.top/blog/2018/08/31/xi-tong-she-ji-mian-shi-ti-:zong-he-kao-cha-mian-shi-zhe-de-da-zhao/)
+* [系统设计题答题套路](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98)
