@@ -64,7 +64,7 @@ ReadWriteLock就是读写锁，它是一个接口，ReentrantReadWriteLock实现
 2. 禁止 JVM 进行的指令重排序。
 
 ### ThreadLocal
-使用`ThreadLocal<UserInfo> userInfo = new ThreadLocal<UserInfo>()`的方式，让每个线程内部都会维护一个ThreadLocalMap，里边包含若干了 Entry（K-V 键值对），每次存取都会先的都当前线程，然后得到该线程对象中的Map，然后与Map交互。
+使用`ThreadLocal<UserInfo> userInfo = new ThreadLocal<UserInfo>()`的方式，让每个线程内部都会维护一个ThreadLocalMap，里边包含若干了 Entry（K-V 键值对），每次存取都会先获取到当前线程ID，然后得到该线程对象中的Map，然后与Map交互。
 
 ### 线程池
 #### 起源
