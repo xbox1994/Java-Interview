@@ -27,12 +27,10 @@ PS：除开知识点，一定要准备好以下套路：
 * [常用的几个设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-设计模式.md)
 * [从URL到看到网页的过程](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/)
 ### 分布式
-* [高并发解决思路](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/高并发.md)
-* [CAP理论](https://www.zhihu.com/question/54105974)
+* [CAP理论](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-CAP理论.md)
 * [锁](https://www.jianshu.com/p/c2b4aa7a12f1)
 * [事务](https://mp.weixin.qq.com/s/gg4q_53eiHCI3OUWzN7eWg)
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
-* [限流](https://crossoverjie.top/2018/04/28/sbc/sbc7-Distributed-Limit)
 * [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-ID生成方式.md)
 * [四层、七层负载均衡的区别](https://www.jianshu.com/p/fa937b8e6712)
 * [一致性算法](https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md)
