@@ -1,16 +1,47 @@
+## 数据类型
+来源：https://redisbook.readthedocs.io/en/latest/internal/db.html#id4
 
-## Redis
-### 原理
-单线程的IO复用模型。便于IO操作，不便于排序、聚合。
+Redis是一个键值对数据库，数据库中的键值对由字典保存。每个数据库都有一个对应的字典，这个字典被称之为键空间。当用户添加一个键值对到数据库时（不论键值对是什么类型）， 程序就将该键值对添加到键空间
 
-### 数据类型
-string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)。
+字典的键是一个字符串对象。字典的值则可以是包括【字符串、列表、哈希表、集合或有序集】在内的任意一种 Redis 类型对象。
 
-### 持久化
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis键空间.png)
+
+上图展示了一个包含 number 、 book 、 message 三个键的数据库 —— 其中 number 键是一个列表，列表中包含三个整数值； book 键是一个哈希表，表中包含三个键值对； 而 message 键则指向另一个字符串：
+
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis数据类型.png)
+
+不同的数据类型的具体实现请看： https://redisbook.readthedocs.io/en/latest/index.html#id3
+
+## 集群模式
+来源： https://my.oschina.net/zhangxufeng/blog/905611  https://www.cnblogs.com/leeSmall/p/8398401.html
+### 主从
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis主从.png)
+用一个redis实例作为主机，其余的实例作为从机。主机和从机的数据完全一致，主机支持数据的写入和读取等各项操作，而从机则只支持与主机数据的同步和读取。因而可以将写入数据的命令发送给主机执行，而读取数据的命令发送给不同的从机执行，从而达到读写分离的目的。
+
+问题是主从模式如果所连接的redis实例因为故障下线了，没有提供一定的手段通知客户端另外可连接的客户端地址，因而需要手动更改客户端配置重新连接。如果主节点由于故障下线了，那么从节点因为没有主节点而同步中断，因而需要人工进行故障转移工作。为了解决这两个问题，在2.8版本之后redis正式提供了sentinel（哨兵）架构。
+### 哨兵
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis哨兵.png)
+由Sentinel节点定期监控发现主节点是否出现了故障，当主节点出现故障时，由Redis Sentinel自动完成故障发现和转移，并通知应用方，实现高可用性。
+
+### 集群
+即使使用哨兵，redis每个实例也是全量存储，每个redis存储的内容都是完整的数据，浪费内存且有木桶效应。为了最大化利用内存，可以采用集群，就是分布式存储。集群将数据分片存储，每组节点存储一部分数据，从而达到分布式集群的目的。
+
+redis集群中数据是和槽（slot）挂钩的，其总共定义了16384个槽，所有的数据根据一致哈希算法会被映射到这16384个槽中的某个槽中；另一方面，这16384个槽是按照设置被分配到不同的redis节点上。由此引发的一致性hash问题可以参看[这里](https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md)
+
+### 如何选择
+集群的优势在于高可用，将写操作分开到不同的节点，如果写的操作较多且数据量巨大，且不需要Lua、事务、Pipeline这样的高级功能则可能考虑集群  
+哨兵的优势在于高可用，支持Lua、事务、Pipeline等高级功能，且能在读的操作较多的场景下工作，所以在绝大多数场景中是适合的  
+主从的优势在于支持Lua、事务、Pipeline等高级功能，且能在读的操作较多的场景下工作，但无法保证高可用，不建议在数据要求严格的场景下使用
+
+## 使用策略
+
+## 持久化
 RDB 持久化可以在指定的时间间隔内生成数据集的时间点快照（point-in-time snapshot）。  
 AOF 持久化记录服务器执行的所有写操作命令，并在服务器启动时，通过重新执行这些命令来还原数据集。 AOF 文件中的命令全部以 Redis 协议的格式来保存，新命令会被追加到文件的末尾。 Redis 还可以在后台对 AOF 文件进行重写（rewrite），使得 AOF 文件的体积不会超出保存数据集状态所需的实际大小。  
 Redis 还可以同时使用 AOF 持久化和 RDB 持久化。 在这种情况下， 当 Redis 重启时， 它会优先使用 AOF 文件来还原数据集， 因为 AOF 文件保存的数据集通常比 RDB 文件所保存的数据集更完整。
 
+## 缓存问题
 ### 缓存击穿
 查询一个数据库中不存在的数据，比如商品详情，查询一个不存在的ID，每次都会访问DB，如果有人恶意破坏，很可能直接对DB造成过大地压力。
 
