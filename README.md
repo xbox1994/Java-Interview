@@ -48,7 +48,7 @@ PS：除开知识点，一定要准备好以下套路：
 * [数组-归并排序-合并有序数组](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-数组-归并排序-合并有序数组.md)
 * [链表-链表反转-链表相加](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-链表-反转链表-链表相加.md)
 * [链表-双指针-删除倒数第n个](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-链表-双指针-删除倒数第n个.md)
-* [二叉树-二叉树反转](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-二叉树-二叉树反转.md)
+* [二叉树-递归-二叉树反转](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-二叉树-递归-二叉树反转.md)
 * [动态规划-连续子数组最大和](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-动态规划-连续子数组最大和.md)
 * [数据结构-LRU淘汰算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-数据结构-LRU淘汰算法.md)
 ### 问题排查
