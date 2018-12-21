@@ -14,7 +14,11 @@ Redis是一个键值对数据库，数据库中的键值对由字典保存。每
 不同的数据类型的具体实现请看： https://redisbook.readthedocs.io/en/latest/index.html#id3
 
 ## 集群模式
-来源： https://my.oschina.net/zhangxufeng/blog/905611  https://www.cnblogs.com/leeSmall/p/8398401.html
+来源：  
+https://my.oschina.net/zhangxufeng/blog/905611  
+https://www.cnblogs.com/leeSmall/p/8398401.html  
+https://docs.aws.amazon.com/zh_cn/AmazonElastiCache/latest/red-ug/CacheNodes.NodeGroups.html  
+
 ### 主从
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis主从.png)
 
@@ -27,15 +31,19 @@ Redis是一个键值对数据库，数据库中的键值对由字典保存。每
 由Sentinel节点定期监控发现主节点是否出现了故障，当主节点出现故障时，由Redis Sentinel自动完成故障发现和转移，并通知应用方，实现高可用性。
 
 ### 集群
-即使使用哨兵，redis每个实例也是全量存储，每个redis存储的内容都是完整的数据，浪费内存且有木桶效应。为了最大化利用内存，可以采用集群，就是分布式存储。集群将数据分片存储，每组节点存储一部分数据，从而达到分布式集群的目的。
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis集群.png)
 
-redis集群中数据是和槽（slot）挂钩的，其总共定义了16384个槽，所有的数据根据一致哈希算法会被映射到这16384个槽中的某个槽中；另一方面，这16384个槽是按照设置被分配到不同的redis节点上。由此引发的一致性hash问题可以参看[这里](https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md)
+redis主从或哨兵模式的每个实例都是全量存储所有数据，浪费内存且有木桶效应。为了最大化利用内存，可以采用集群，就是分布式存储。集群将数据分片存储，每组节点存储一部分数据，从而达到分布式集群的目的。
+
+上图是主从模式与集群模式的区别，redis集群中数据是和槽（slot）挂钩的，其总共定义了16384个槽，所有的数据根据一致哈希算法会被映射到这16384个槽中的某个槽中；另一方面，这16384个槽是按照设置被分配到不同的redis节点上。
+
+但集群模式会直接导致访问数据方式的改变，比如客户端向A节点发送GET命令但该数据在B节点，redis会返回重定向错误给客户端让客户端再次发送请求，这也直接导致了必须在相同节点才能执行的一些高级功能（如Lua、事务、Pipeline）无法使用。另外还会引发数据分配的一致性hash问题可以参看[这里](https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md)
 
 ### 如何选择
 
-1. 集群的优势在于高可用，将写操作分开到不同的节点，如果写的操作较多且数据量巨大，且不需要Lua、事务、Pipeline这样的高级功能则可能考虑集群
-2. 哨兵的优势在于高可用，支持Lua、事务、Pipeline等高级功能，且能在读的操作较多的场景下工作，所以在绝大多数场景中是适合的
-3. 主从的优势在于支持Lua、事务、Pipeline等高级功能，且能在读的操作较多的场景下工作，但无法保证高可用，不建议在数据要求严格的场景下使用
+1. 集群的优势在于高可用，将写操作分开到不同的节点，如果写的操作较多且数据量巨大，且不需要高级功能则可能考虑集群
+2. 哨兵的优势在于高可用，支持高级功能，且能在读的操作较多的场景下工作，所以在绝大多数场景中是适合的
+3. 主从的优势在于支持高级功能，且能在读的操作较多的场景下工作，但无法保证高可用，不建议在数据要求严格的场景下使用
 
 ## 使用策略
 ### 延迟加载
