@@ -11,9 +11,9 @@
 3. 实现：在Java里如何实现线程，Thread、Runnable、Callable。
 4. 问题：线程可以获得更大的吞吐量，但是开销很大，线程栈空间的大小、切换线程需要的时间，所以用到线程池进行重复利用，当线程使用完毕之后就放回线程池，避免创建与销毁的开销。
 
-### 线程同步/线程间通信的方式
-https://fangjian0423.github.io/2016/04/18/java-synchronize-way/  
-https://github.com/crossoverJie/Java-Interview/blob/master/MD/concurrent/thread-communication.md
+### 线程间通信的方式
+1. 等待通知机制 wait()、notify()、join()、interrupted()
+2. 并发工具synchronized、lock、CountDownLatch、CyclicBarrier、Semaphore
 
 ### 锁
 #### 锁是什么
@@ -39,23 +39,6 @@ notifyAll：唤醒等待队列中等待该对象锁的全部线程，让其竞�
   3. ReentrantLock提供了一种能够中断等待锁的线程的机制，通过lock.lockInterruptibly()来实现这个机制
 
 **我们写同步的时候，优先考虑synchronized，如果有特殊需要，再进一步优化。ReentrantLock和Atomic如果用的不好，不仅不能提高性能，还可能带来灾难。**
-
-### 有几种锁
-#### 悲观锁
-假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁。synchronized关键字的实现也是悲观锁。
-#### 乐观锁
-每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等机制。原子变量类就是使用了乐观锁的一种实现方式CAS实现的。当多个线程尝试使用CAS同时更新同一个变量时，只有其中一个线程能更新变量的值，而其它线程都失败，失败的线程并不会被挂起，而是被告知这次竞争中失败，并可以再次尝试。
-#### 可重入锁 
-如果锁具备可重入性，则称作为可重入锁。像synchronized和ReentrantLock都是可重入锁
-#### 可中断锁 
-可中断锁：顾名思义，就是可以interrupt()中断的锁。 在Java中，synchronized就不是可中断锁，而Lock是可中断锁。   
-如果某一线程A正在执行锁中的代码，另一线程B正在等待获取该锁，可能由于等待时间过长，线程B不想等待了，想先处理其他事情，我们可以让它中断自己或者在别的线程中中断它，这种就是可中断锁。 
-#### 公平锁 
-公平锁即尽量以请求锁的顺序来获取锁。比如同是有多个线程在等待一个锁，当这个锁被释放时，等待时间最久的线程（最先请求的线程）会获得该所，这种就是公平锁。 非公平锁即无法保证锁的获取是按照请求锁的顺序进行的。这样就可能导致某个或者一些线程永远获取不到锁。   
-在Java中，synchronized就是非公平锁，它无法保证等待的线程获取锁的顺序。而对于ReentrantLock和ReentrantReadWriteLock，它默认情况下是非公平锁，但是可以设置为公平锁。
-#### 读写锁 
-读写锁将对一个资源（比如文件）的访问分成了2个锁，一个读锁和一个写锁。正因为有了读写锁，才使得多个线程之间的读操作不会发生冲突。
-ReadWriteLock就是读写锁，它是一个接口，ReentrantReadWriteLock实现了这个接口。可以通过readLock()获取读锁，通过writeLock()获取写锁。
 
 ### volatile
 功能：
@@ -95,10 +78,63 @@ new Thread弊端：
         2.2.2 如果当前线程数 >= maximumPoolSize，会执行指定的拒绝策略
 
 #### [阻塞队列的策略](https://blog.csdn.net/hayre/article/details/53291712)
-* 直接提交。SynchronousQueue，它将任务直接提交给线程而不保持它们。如果不存在可用于立即运行任务的线程，则试图把任务加入队列将失败，因此会构造一个新的线程。此策略可以避免在处理可能具有内部依赖性的请求集时出现锁。直接提交通常要求无界maximumPoolSizes 以避免拒绝新提交的任务。
-* 无界队列。使用无界队列（例如，不具有预定义容量的 LinkedBlockingQueue）将导致在所有 corePoolSize线程都忙时新任务在队列中等待。这样，创建的线程就不会超过 corePoolSize。（因此，maximumPoolSize的值也就无效了。）当每个任务完全独立于其他任务，即任务执行互不影响时，适合于使用无界队列；例如，在 Web页服务器中。这种排队可用于处理瞬态突发请求，当命令以超过队列所能处理的平均数连续到达时，此策略允许无界线程具有增长的可能性。
-* 有界队列。当使用有限的 maximumPoolSizes 时，有界队列（如ArrayBlockingQueue）有助于防止资源耗尽，但是可能较难调整和控制。队列大小和最大池大小可能需要相互折衷：使用大型队列和小型池可以最大限度地降低CPU 使用率、操作系统资源和上下文切换开销，但是可能导致人工降低吞吐量。如果任务频繁阻塞（例如，如果它们是 I/O边界），则系统可能为超过您许可的更多线程安排时间。使用小型队列通常要求较大的池大小，CPU使用率较高，但是可能遇到不可接受的调度开销，这样也会降低吞吐量。
+* 直接提交。SynchronousQueue是一个没有数据缓冲的BlockingQueue，生产者线程对其的插入操作put必须等待消费者的移除操作take。将任务直接提交给线程而不保持它们。
+* 无界队列。当使用无限的 maximumPoolSizes 时，将导致在所有corePoolSize线程都忙时新任务在队列中等待。
+* 有界队列。当使用有限的 maximumPoolSizes 时，有界队列（如ArrayBlockingQueue）有助于防止资源耗尽，但是可能较难调整和控制。
 
 ### 并发包工具类
-[http://www.wangtianyi.top/blog/2018/05/01/javagao-bing-fa-xi-lie-si-:juc/](http://www.wangtianyi.top/blog/2018/05/01/javagao-bing-fa-xi-lie-si-:juc/?utm_source=github&utm_medium=github)  
-[https://blog.csdn.net/mzh1992/article/details/60957351](https://blog.csdn.net/mzh1992/article/details/60957351)
+#### CountDownLatch
+计数器闭锁是一个能阻塞主线程，让其他线程满足特定条件下主线程再继续执行的线程同步工具。
+
+![](http://www.wangtianyi.top/images/blog/2018-04-28_3.png)
+图中，A为主线程，A首先设置计数器的数到AQS的state中，当调用await方法之后，A线程阻塞，随后每次其他线程调用countDown的时候，将state减1，直到计数器为0的时候，A线程继续执行。
+
+使用场景:  
+并行计算：把任务分配给不同线程之后需要等待所有线程计算完成之后主线程才能汇总得到最终结果  
+模拟并发：可以作为并发次数的统计变量，当任意多个线程执行完成并发任务之后统计一次即可  
+
+#### Semaphore
+信号量是一个能阻塞线程且能控制统一时间请求的并发量的工具。比如能保证同时执行的线程最多200个，模拟出稳定的并发量。
+
+```java
+public class CountDownLatchTest {
+
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        Semaphore semaphore = new Semaphore(3); //配置只能发布3个运行许可证
+        for (int i = 0; i < 100; i++) {
+            int finalI = i;
+            executorService.execute(() -> {
+                try {
+                    semaphore.acquire(3); //获取3个运行许可，如果获取不到会一直等待，使用tryAcquire则不会等待
+                    Thread.sleep(1000);
+                    System.out.println(finalI);
+                    semaphore.release(3);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+        executorService.shutdown();
+    }
+}
+```
+
+由于同时获取3个许可，所以即使开启了100个线程，但是每秒只能执行一个任务
+
+使用场景:  
+数据库连接并发数，如果超过并发数，等待（acqiure）或者抛出异常（tryAcquire）  
+
+#### CyclicBarrier
+可以让一组线程相互等待，当每个线程都准备好之后，所有线程才继续执行的工具类
+
+![](http://www.wangtianyi.top/images/blog/2018-05-01_2.png)
+
+与CountDownLatch类似，都是通过计数器实现的，当某个线程调用await之后，计数器减1，当计数器大于0时将等待的线程包装成AQS的Node放入等待队列中，当计数器为0时将等待队列中的Node拿出来执行。
+
+与CountDownLatch的区别：  
+1. CountDownLatch是一个线程等其他线程，CyclicBarrier是多个线程相互等待
+2. CyclicBarrier的计数器能重复使用，调用多次
+
+使用场景：
+有四个游戏玩家玩游戏，游戏有三个关卡，每个关卡必须要所有玩家都到达后才能允许通过。其实这个场景里的玩家中如果有玩家A先到了关卡1，他必须等到其他所有玩家都到达关卡1时才能通过，也就是说线程之间需要相互等待。
