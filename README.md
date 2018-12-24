@@ -32,8 +32,7 @@ PS：除开知识点，一定要准备好以下套路：
 * [事务](https://mp.weixin.qq.com/s/gg4q_53eiHCI3OUWzN7eWg)
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
 * [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-ID生成方式.md)
-* [四层、七层负载均衡的区别](https://www.jianshu.com/p/fa937b8e6712)
-* [一致性算法](https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md)
+* [一致性hash](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-一致性hash.md)
 ### 微服务
 * [微服务介绍](http://www.wangtianyi.top/blog/2017/04/16/microservies-1-introduction-to-microservies/?utm_source=github&utm_medium=github)
 * [服务发现原理](http://www.wangtianyi.top/blog/2017/05/15/zai-wei-fu-wu-jia-gou-zhong-de-fu-wu-fa-xian-ji-zhi/?utm_source=github&utm_medium=github)

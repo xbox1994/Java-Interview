@@ -86,7 +86,7 @@ new Thread弊端：
 #### CountDownLatch
 计数器闭锁是一个能阻塞主线程，让其他线程满足特定条件下主线程再继续执行的线程同步工具。
 
-![](http://www.wangtianyi.top/images/blog/2018-04-28_3.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/countdownlatch.png)
 图中，A为主线程，A首先设置计数器的数到AQS的state中，当调用await方法之后，A线程阻塞，随后每次其他线程调用countDown的时候，将state减1，直到计数器为0的时候，A线程继续执行。
 
 使用场景:  
@@ -128,7 +128,7 @@ public class CountDownLatchTest {
 #### CyclicBarrier
 可以让一组线程相互等待，当每个线程都准备好之后，所有线程才继续执行的工具类
 
-![](http://www.wangtianyi.top/images/blog/2018-05-01_2.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/cyclicbarrier.png)
 
 与CountDownLatch类似，都是通过计数器实现的，当某个线程调用await之后，计数器减1，当计数器大于0时将等待的线程包装成AQS的Node放入等待队列中，当计数器为0时将等待队列中的Node拿出来执行。
 
