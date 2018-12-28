@@ -34,6 +34,7 @@ PS：除开知识点，一定要准备好以下套路：
 * [服务发现](http://sjyuan.cc/service-registration-and-discovery/)
 * [网关](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/微服务-网关.md)
 * [服务容错保护](http://sjyuan.cc/service-fault-tolerant-protected-with-hytrix/)
+* [服务配置中心](http://sjyuan.cc/service-config-server/)
 ### 算法（头条必问）
 * [数组-快速排序-第k大个数](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-数组-快速排序-第k大个数.md)
 * [数组-对撞指针-最大蓄水](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-数组-对撞指针-最大蓄水.md)
