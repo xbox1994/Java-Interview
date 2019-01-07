@@ -30,3 +30,5 @@ ConcurrentHashMap 类中包含两个静态内部类 HashEntry 和 Segment。Hash
 1. 为进一步提高并发性，放弃了分段锁，锁的级别控制在了更细粒度的table元素级别，也就是说只需要锁住这个链表的head节点，并不会影响其他的table元素的读写，好处在于并发的粒度更细，影响更小，从而并发效率更好
 2. 使用CAS + synchronized 来保证实现put操作：如果Key对应的数组元素为null，则通过CAS操作将其设置为当前值。如果Key对应的数组元素（也即链表表头或者树的根元素）不为null，则对该元素使用synchronized关键字申请锁，然后进行操作。如果该put操作使得当前链表长度超过一定阈值，则将链表（寻址时间复杂度为O(N)）转换为红黑树（寻址时间复杂度为O(log(N))，插入操作完成之后如果所有元素的数量大于当前容量（默认16）*负载因子（默认0.75）就进行扩容。
   
+
+欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~

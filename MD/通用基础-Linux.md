@@ -12,3 +12,6 @@
 ## CPU负载的含义
 一段时间内CPU正在处理和等待处理的进程总数与CPU最大处理进程数的比例。对于多核CPU来说最大LOAD是最大的核心数量。  
 使用`top`和`top -Hp`查找到CPU占用比较大的线程，进而使用`jstack`来排查Java程序的问题。
+
+
+欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~

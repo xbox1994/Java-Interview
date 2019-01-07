@@ -59,3 +59,5 @@
 计算时可以在 IP 后加上编号来生成哈希值。
 
 这样只需要在原有的基础上多一步由虚拟节点映射到实际节点的步骤即可让少量节点也能满足均匀性。
+
+欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~
