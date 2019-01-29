@@ -34,18 +34,7 @@ JVM虚拟机内存模型实现规范：
 
 逃逸分析技术可以分析出某个对象是否永远只在某个方法、线程的范围内，并没有“逃逸”出这个范围，逃逸分析的一个结果就是对于某些未逃逸对象可以直接在栈上分配提高对象分配回收效率，对象占用的空间会随栈帧的出栈而销毁。
 
-### TLAB
-JVM在内存新生代Eden Space中开辟了一小块线程私有的区域TLAB（Thread-local allocation buffer）。在Java程序中很多对象都是小对象且用过即丢，它们不存在线程共享也适合被快速GC，所以对于小对象通常JVM会优先分配在TLAB上，并且TLAB上的分配由于是线程私有所以没有锁开销
-   
-也就是说，Java中每个线程都会有自己的缓冲区称作TLAB，在对象分配的时候不用锁住整个堆，而只需要在自己的缓冲区分配即可
-
 ### 类加载机制
-#### 初始化时机
-1. new/getstatic/putstatic/invokestatic指令，比如new对象、静态字段或方法被使用
-2. 使用java.lang.reflect包对类进行反射调用
-3. 如果被初始化的类的父类没有被初始化，先初始化父类
-4. main函数
-
 #### 加载过程
 
 1. 加载（获取来自任意来源的字节流并转换成运行时数据结构，生成Class对象）
@@ -146,7 +135,7 @@ STW总会发生，不管是新生代还是老年代，比如CMS在初始标记�
 
 那么为什么一定要STW？因为在定位堆中的对象时JVM会记录下对所有对象的引用，如果在定位对象过程中，有新的对象被分配或者刚记录下的对象突然变得无法访问，就会导致一些问题，比如部分对象无法被回收，更严重的是如果GC期间分配的一个GC Root对象引用了准备被回收的对象，那么该对象就会被错误地回收。
 
-## [JVM调优](http://www.wangtianyi.top/blog/2018/07/27/jvmdiao-you-ru-men-(er-):shi-zhan-diao-you-parallelshou-ji-qi/?utm_source=github&utm_medium=github)
-  
+## JVM调优
+https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html
 
 欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~
