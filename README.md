@@ -31,10 +31,10 @@ PS：除开知识点，一定要准备好以下套路：
 * [一致性hash](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-一致性hash.md)
 ### 微服务
 * [微服务介绍](http://www.wangtianyi.top/blog/2017/04/16/microservies-1-introduction-to-microservies/?utm_source=github&utm_medium=github)
-* [服务发现](http://sjyuan.cc/service-registration-and-discovery/)
-* [网关](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/微服务-网关.md)
-* [服务容错保护](http://sjyuan.cc/service-fault-tolerant-protected-with-hytrix/)
-* [服务配置中心](http://sjyuan.cc/service-config-server/)
+* [服务发现](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/微服务-服务注册与发现.md)
+* [API网关](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/微服务-网关.md)
+* [服务容错保护](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/微服务-服务容错保护.md)
+* [服务配置中心](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/微服务-服务配置中心.md)
 ### 算法（头条必问）
 * [数组-快速排序-第k大个数](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-数组-快速排序-第k大个数.md)
 * [数组-对撞指针-最大蓄水](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-数组-对撞指针-最大蓄水.md)
