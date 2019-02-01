@@ -11,14 +11,14 @@ PS：除开知识点，一定要准备好以下套路：
 * [JVM原理](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Java基础-JVM原理.md)
 * [集合](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Java基础-集合.md)
 * [多线程](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Java基础-多线程.md)
+* [问题排查](http://www.wangtianyi.top/blog/2018/07/20/javasheng-chan-huan-jing-xia-wen-ti-pai-cha/?utm_source=github&utm_medium=github)
 ### Web框架、数据库
 * [Spring](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Web框架-Spring.md)
 * [MySQL](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-MySQL.md)
 * [Redis](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/数据库-Redis.md)
 ### 通用基础
-* [Linux](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-Linux.md)
 * [进程与线程](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-进程与线程.md)
-* [TCP & HTTP](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-TCP&HTTP.md)
+* [网络通信协议](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-网络通信协议.md)
 * [排序算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-排序算法.md)
 * [常用设计模式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/通用基础-设计模式.md)
 * [从URL到看到网页的过程](http://www.wangtianyi.top/blog/2017/10/22/cong-urlkai-shi-,ding-wei-shi-jie/?utm_source=github&utm_medium=github)
@@ -45,8 +45,6 @@ PS：除开知识点，一定要准备好以下套路：
 * [二叉树-递归-二叉树反转](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-二叉树-递归-二叉树反转.md)
 * [动态规划-连续子数组最大和](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-动态规划-连续子数组最大和.md)
 * [数据结构-LRU淘汰算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-数据结构-LRU淘汰算法.md)
-### 问题排查
-* [Java生产环境下问题排查](http://www.wangtianyi.top/blog/2018/07/20/javasheng-chan-huan-jing-xia-wen-ti-pai-cha/?utm_source=github&utm_medium=github)
 ### 项目举例
 * [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
 * [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
