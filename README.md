@@ -27,6 +27,7 @@
 * [锁](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-锁.md)
 * [事务](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-事务.md)
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
+* [协调器](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-协调器.md)
 * [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-ID生成方式.md)
 * [一致性hash](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-一致性hash.md)
 ### 微服务
