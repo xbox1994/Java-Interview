@@ -1,6 +1,4 @@
 # 一致 Hash 算法
-来源：https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md
-
 分布式缓存中，如何将数据均匀的分散到各个节点中，并且尽量的在加减节点时能使受影响的数据最少。
 
 ## Hash 取模
@@ -59,5 +57,7 @@
 计算时可以在 IP 后加上编号来生成哈希值。
 
 这样只需要在原有的基础上多一步由虚拟节点映射到实际节点的步骤即可让少量节点也能满足均匀性。
+
+https://github.com/crossoverJie/JCSprout/blob/master/MD/Consistent-Hash.md
 
 欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~

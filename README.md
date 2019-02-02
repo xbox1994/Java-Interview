@@ -1,6 +1,6 @@
 本项目是本人于2018年参加BATJ等其他公司电话、现场面试之后总结出来的针对Java面试的知识点或真题，每个点或题目都是在面试中被问过的。
 
-PS：除开知识点，一定要准备好以下套路：  
+除开知识点，一定要准备好以下套路：  
 1. **个人介绍**，需要准备1分钟和5分钟两个版本，包括学习经历、工作经历、项目经历、个人优势、一句话总结。一定要自己背得滚瓜烂熟，张口就来
 2. **抽象概念回答方式**，当面试官问你是如何理解多线程的时候，你要知道从定义、来源、实现、问题、优化、应用方面系统性地回答
 3. **项目所占的比重是非常大的**，至少与知识点的比例是五五开，所以必须针对简历中的两个以上的项目，形成包括【架构和实现细节】，【正常流程和异常流程的处理】，【难点+坑+复盘优化】三位一体的组合拳
@@ -25,7 +25,7 @@ PS：除开知识点，一定要准备好以下套路：
 ### 分布式
 * [CAP理论](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-CAP理论.md)
 * [锁](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-锁.md)
-* [事务](https://mp.weixin.qq.com/s/gg4q_53eiHCI3OUWzN7eWg)
+* [事务](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-事务.md)
 * [消息队列](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-消息队列.md)
 * [ID生成方式](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-ID生成方式.md)
 * [一致性hash](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/分布式-一致性hash.md)
