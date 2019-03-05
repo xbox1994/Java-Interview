@@ -38,4 +38,4 @@
 https://tech.meituan.com/MT_Leaf.html  
 https://github.com/crossoverJie/Java-Interview/blob/master/MD/ID-generator.md
 
-欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~
+欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~

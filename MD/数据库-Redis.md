@@ -88,4 +88,4 @@ AOF 持久化记录服务器执行的所有写操作命令，并在服务器启�
 Redis 还可以同时使用 AOF 持久化和 RDB 持久化。 在这种情况下， 当 Redis 重启时， 它会优先使用 AOF 文件来还原数据集， 因为 AOF 文件保存的数据集通常比 RDB 文件所保存的数据集更完整。  
 但实际上持久化会对Redis的性能造成非常严重的影响，如果一定需要保存数据，那么数据就不应该依靠缓存来保存，建议使用其他方式如数据库。所以Redis的持久化意义不大。
 
-欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~
+欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~

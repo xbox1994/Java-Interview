@@ -138,4 +138,4 @@ STW总会发生，不管是新生代还是老年代，比如CMS在初始标记�
 ## JVM调优
 https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html
 
-欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~
+欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~

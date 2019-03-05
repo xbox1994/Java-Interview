@@ -49,4 +49,4 @@ cglib工具：利用asm开源包，对代理对象类的class文件加载进来�
 2. 如果目标对象实现了接口，可以强制使用CGLIB实现AOP
 3. 如果目标对象没有实现了接口，必须采用CGLIB库，spring会自动在JDK动态代理和CGLIB之间转换
 
-欢迎光临[91Code](http://www.91code.info/?utm_source=github&utm_medium=github)，发现更多技术资源~
+欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~

@@ -315,3 +315,5 @@ SQL扩展模式包括:
         * 创建缩略图
         * 上传到**数据库**
         * 存储缩略图到**对象存储**
+
+欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~
