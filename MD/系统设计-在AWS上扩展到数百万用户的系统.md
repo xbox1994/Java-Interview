@@ -65,7 +65,7 @@
 
 > 大致写出包含所有重要组件的高层设计
 
-![Imgur](http://i.imgur.com/B8LDKD7.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/aws1.png)
 
 ## 第三步：设计核心组件
 
@@ -140,7 +140,7 @@
 
 ### 用户数+
 
-![Imgur](http://i.imgur.com/rrfjMXB.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/aws2.png)
 
 #### 假设
 
@@ -187,7 +187,7 @@
 
 ### 用户数++
 
-![Imgur](http://i.imgur.com/raoFTXM.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/aws3.png)
 
 #### 假设
 
@@ -212,7 +212,7 @@
 
 ### Users+++
 
-![Imgur](http://i.imgur.com/OZCxJr0.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/aws4.png)
 
 **注意:** 为了避免过于混乱，没有显示**内部负载均衡器**
 
@@ -241,7 +241,7 @@
 
 ### 用户数++++
 
-![Imgur](http://i.imgur.com/3X8nmdL.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/aws5.png)
 
 #### 假设
 
@@ -279,7 +279,7 @@
 
 ### Users+++++
 
-![Imgur](http://i.imgur.com/jj3A5N8.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/aws6.png)
 
 **注意:** **自动缩放**组未在图中显示
 
