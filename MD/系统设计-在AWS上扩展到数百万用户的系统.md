@@ -210,7 +210,7 @@
     * 比如你可以添加**应用服务器**处理**读API**而其他**应用服务器**处理**写API**
 * 移动静态（和一些动态)内容到[**CDN**](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9Ccdn)比如CloudFount去减少负载和延迟
 
-### Users+++
+### 用户数+++
 
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/aws4.png)
 
@@ -277,7 +277,7 @@
         * 自动缩放可能会带来复杂性
         * 系统可能需要一段时间才能适当扩展以满足不断增长的需求，或者在需求下降时缩小规模
 
-### Users+++++
+### 用户数+++++
 
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/aws6.png)
 
