@@ -2,10 +2,11 @@
 
 除开知识点，一定要准备好以下套路：  
 1. **个人介绍**，需要准备1分钟和5分钟两个版本，包括学习经历、工作经历、项目经历、个人优势、一句话总结。一定要自己背得滚瓜烂熟，张口就来
-2. **抽象概念回答方式**，当面试官问你是如何理解多线程的时候，你要知道从定义、来源、实现、问题、优化、应用方面系统性地回答
-3. **项目所占的比重是非常大的**，至少与知识点的比例是五五开，所以必须针对简历中的两个以上的项目，形成包括【架构和实现细节】，【正常流程和异常流程的处理】，【难点+坑+复盘优化】三位一体的组合拳
+2. **抽象概念**，当面试官问你是如何理解多线程的时候，你要知道从定义、来源、实现、问题、优化、应用方面系统性地回答
+3. **项目强化**，至少与知识点的比例是五五开，所以必须针对简历中的两个以上的项目，形成包括【架构和实现细节】，【正常流程和异常流程的处理】，【难点+坑+复盘优化】三位一体的组合拳
 4. **压力练习**，面试的时候难免紧张，可能会严重影响发挥，通过平时多找机会参与交流分享，或找人做压力面试来改善
 5. **表达练习**，表达能力非常影响在面试中的表现，能否简练地将答案告诉面试官，可以通过给自己讲解的方式刻意练习
+6. **重点针对**，面试官会针对简历提问，所以请针对简历上写的所有技术点进行重点准备
 
 ### Java基础
 * [JVM原理](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/Java基础-JVM原理.md)
@@ -47,7 +48,6 @@
 * [数据结构-LRU淘汰算法](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/算法-数据结构-LRU淘汰算法.md)
 ### 项目举例
 * [秒杀架构](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/秒杀架构.md)
-* [搜索引擎](https://github.com/xbox1994/2018-Java-Interview/blob/master/MD/搜索引擎.md)
 ### 系统设计
 * [系统设计题答题套路](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98)
 * [在AWS上扩展到数百万用户的系统](https://www.wangtianyi.top/blog/2019/03/06/zai-awsshang-kuo-zhan-dao-shu-bai-mo-yong-hu-de-xi-tong/?utm_source=github&utm_medium=github)

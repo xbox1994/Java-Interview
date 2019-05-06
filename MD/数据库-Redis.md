@@ -11,7 +11,7 @@ Redis是一个键值对数据库，数据库中的键值对由字典保存。每
 
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis数据类型.png)
 
-不同的数据类型的具体实现请看： https://redisbook.readthedocs.io/en/latest/index.html#id3
+不同的数据类型的具体实现（压缩列表、跳表必看）请看： https://redisbook.readthedocs.io/en/latest/index.html#id3
 
 ## 集群模式
 来源：  
