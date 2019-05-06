@@ -139,4 +139,55 @@ public class CountDownLatchTest {
 使用场景：
 有四个游戏玩家玩游戏，游戏有三个关卡，每个关卡必须要所有玩家都到达后才能允许通过。其实这个场景里的玩家中如果有玩家A先到了关卡1，他必须等到其他所有玩家都到达关卡1时才能通过，也就是说线程之间需要相互等待。
 
+### 编程题
+交替打印奇偶数
+
+```java
+public class PrintOddAndEvenShu {
+    private int value = 0;
+
+    private synchronized void printOdd() {
+        while (value <= 100) {
+            if (value % 2 == 1) {
+                System.out.println(Thread.currentThread() + ": -" + value++);
+                this.notify();
+            } else {
+                try {
+                    this.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
+    }
+
+    private synchronized void printEven() {
+        while (value <= 100) {
+            if (value % 2 == 0) {
+                System.out.println(Thread.currentThread() + ": --" + value++);
+                this.notify();
+            } else {
+                try {
+                    this.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        PrintOddAndEvenShu print = new PrintOddAndEvenShu();
+        Thread t1 = new Thread(print::printOdd);
+        Thread t2 = new Thread(print::printEven);
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+    }
+}
+```
+
 欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~

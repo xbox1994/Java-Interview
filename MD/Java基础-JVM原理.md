@@ -136,6 +136,8 @@ STW总会发生，不管是新生代还是老年代，比如CMS在初始标记�
 那么为什么一定要STW？因为在定位堆中的对象时JVM会记录下对所有对象的引用，如果在定位对象过程中，有新的对象被分配或者刚记录下的对象突然变得无法访问，就会导致一些问题，比如部分对象无法被回收，更严重的是如果GC期间分配的一个GC Root对象引用了准备被回收的对象，那么该对象就会被错误地回收。
 
 ## JVM调优
-https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html
+基础：https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html
+
+案例：https://www.wangtianyi.top/blog/2018/07/27/jvmdiao-you-ru-men-er-shi-zhan-diao-you-parallelshou-ji-qi/
 
 欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~
