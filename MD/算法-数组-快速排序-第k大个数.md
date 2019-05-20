@@ -1,19 +1,23 @@
 https://leetcode.com/problems/kth-largest-element-in-an-array/
 
-Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
-Note:
+Example 1:
 
-* The number of elements initialized in nums1 and nums2 are m and n respectively.
-* You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.
-Example:
 ```
-Input:
-nums1 = [1,2,3,0,0,0], m = 3
-nums2 = [2,5,6],       n = 3
-
-Output: [1,2,2,3,5,6]
+Input: [3,2,1,5,6,4] and k = 2
+Output: 5
 ```
+
+Example 2:
+
+```
+Input: [3,2,3,1,2,4,5,5,6] and k = 4
+Output: 4
+```
+
+Note:  
+You may assume k is always valid, 1 ≤ k ≤ array's length.
 
 快排的每一次排序就是找到一个第N大的数，修改快排的递归逻辑。算法复杂度为O(N)。
 
