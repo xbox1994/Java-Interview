@@ -1,12 +1,12 @@
 ## BIO
-Block-IO：InputStream和OutputStream，Reader和Writer
+Block-IO：InputStream和OutputStream，Reader和Writer。属于同步阻塞模型
 
 同步阻塞：
 
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/BIO.png)
 
 ## NIO
-NonBlock-IO：Channel、Buffer、Selector。IO多路复用、同步非阻塞
+NonBlock-IO：Channel、Buffer、Selector。属于IO多路复用的同步非阻塞模型
 
 同步非阻塞：
 
@@ -27,7 +27,7 @@ IO多路复用：相当于对同步非阻塞的优化版本，区别在于I/O多
 3. NIO提供直接内存复制方式，消除了JVM与操作系统之间读写内存的损耗
 
 ## AIO
-Asynchronous IO：基于事件和回调机制、异步非阻塞
+Asynchronous IO：属于事件和回调机制的异步非阻塞模型
 
 ![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/AIO.png)
 
