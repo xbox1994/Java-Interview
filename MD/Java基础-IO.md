@@ -18,7 +18,7 @@ IO多路复用：相当于对同步非阻塞的优化版本，区别在于I/O多
 
 在Java的NIO中，是基于Channel和Buffer进行操作，数据总是从通道读取到缓冲区中，或者从缓冲区写入到通道中。Selector用于监听多个通道的事件（比如：连接打开，数据到达）。因此，单个线程可以监听多个数据通道，select方法会一直阻塞，直到channel中有事件就绪：
 
-![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/NIO-2.png)
+![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/NIO-4.png)
 
 与BIO区别如下：
 
