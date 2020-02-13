@@ -5,11 +5,11 @@ Redis是一个键值对数据库，数据库中的键值对由字典保存。每
 
 字典的键是一个字符串对象。字典的值则可以是包括【字符串、列表、哈希表、集合或有序集】在内的任意一种 Redis 类型对象。
 
-![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis键空间.png)
+![](https://github.com/xbox1994/Java-Interview/raw/master/images/redis键空间.png)
 
 上图展示了一个包含 number 、 book 、 message 三个键的数据库 —— 其中 number 键是一个列表，列表中包含三个整数值； book 键是一个哈希表，表中包含三个键值对； 而 message 键则指向另一个字符串：
 
-![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis数据类型.png)
+![](https://github.com/xbox1994/Java-Interview/raw/master/images/redis数据类型.png)
 
 不同的数据类型的具体实现（压缩列表、跳表必看）请看： https://redisbook.readthedocs.io/en/latest/index.html#id3
 
@@ -20,18 +20,18 @@ https://www.cnblogs.com/leeSmall/p/8398401.html
 https://docs.aws.amazon.com/zh_cn/AmazonElastiCache/latest/red-ug/CacheNodes.NodeGroups.html  
 
 ### 主从
-![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis主从.png)
+![](https://github.com/xbox1994/Java-Interview/raw/master/images/redis主从.png)
 
 用一个redis实例作为主机，其余的实例作为从机。主机和从机的数据完全一致，主机支持数据的写入和读取等各项操作，而从机则只支持与主机数据的同步和读取。因而可以将写入数据的命令发送给主机执行，而读取数据的命令发送给不同的从机执行，从而达到读写分离的目的。
 
 问题是主从模式如果所连接的redis实例因为故障下线了，没有提供一定的手段通知客户端另外可连接的客户端地址，因而需要手动更改客户端配置重新连接。如果主节点由于故障下线了，那么从节点因为没有主节点而同步中断，因而需要人工进行故障转移工作。为了解决这两个问题，在2.8版本之后redis正式提供了sentinel（哨兵）架构。
 ### 哨兵
-![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis哨兵.png)
+![](https://github.com/xbox1994/Java-Interview/raw/master/images/redis哨兵.png)
 
 由Sentinel节点定期监控发现主节点是否出现了故障，当主节点出现故障时，由Redis Sentinel自动完成故障发现和转移，并通知应用方，实现高可用性。
 
 ### 集群
-![](https://github.com/xbox1994/2018-Java-Interview/raw/master/images/redis集群.png)
+![](https://github.com/xbox1994/Java-Interview/raw/master/images/redis集群.png)
 
 redis主从或哨兵模式的每个实例都是全量存储所有数据，浪费内存且有木桶效应。为了最大化利用内存，可以采用集群，就是分布式存储。集群将数据分片存储，每组节点存储一部分数据，从而达到分布式集群的目的。
 
