@@ -20,6 +20,10 @@ JVM虚拟机内存模型实现规范：
 
 以HotSpot虚拟机实现为例，Java8中内存区域如下：
 
+JVM是Java平台的基础和核心，
+一般在一个java大版本中JVM版本变化都是比较小的。
+HotSpot是一种JVM实现技术，
+
 ![](https://github.com/xbox1994/Java-Interview/raw/master/images/JVM1.8.png)
 
 与规范中的区别：
