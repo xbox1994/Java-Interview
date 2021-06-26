@@ -1,3 +1,7 @@
+本项目将不再重点维护，欢迎关注本人微信公众号，获取最新面试资料、免费面试指导！
+
+![](https://github.com/xbox1994/Java-Interview/raw/master/images/wechat_qrcode.jpg)
+
 本项目是本人参加BAT等其他公司电话、现场面试之后总结出来的针对Java面试的知识点或真题，每个点或题目都是在面试中被问过的。
 
 除开知识点，一定要准备好以下套路：  
