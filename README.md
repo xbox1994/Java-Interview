@@ -48,6 +48,8 @@
 * [二叉树-递归-二叉树反转](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-二叉树-递归-二叉树反转.md)
 * [动态规划-连续子数组最大和](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-动态规划-连续子数组最大和.md)
 * [数据结构-LRU淘汰算法](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-数据结构-LRU淘汰算法.md)
+* [有序数组中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/)
+* [数组中的k个最小值](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/solution/zui-xiao-de-kge-shu-by-leetcode-solution/)
 ### 项目举例
 * [秒杀架构](https://github.com/xbox1994/Java-Interview/blob/master/MD/秒杀架构.md)
 ### 系统设计
