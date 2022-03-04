@@ -226,4 +226,66 @@ public class PrintOddAndEvenShu {
 }
 ```
 
+
+多线程交替打印alibaba： https://blog.csdn.net/CX610602108/article/details/106427979
+我自行实现的简单解法：
+```java
+
+public class Test {
+    private int currentI = 0;
+
+    private synchronized void printSpace(int inputLength) {
+        while (true) {
+            if (currentI == inputLength) {
+                currentI = 0;
+                System.out.print(" ");
+                this.notifyAll();
+            } else {
+                try {
+                    this.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private synchronized void printLetter(int i, char c) {
+        while (true) {
+            if (i == currentI) {
+                currentI++;
+                System.out.print(c);
+                this.notifyAll();
+            } else {
+                try {
+                    this.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private synchronized void print(String input) throws Exception {
+        Test test = new Test();
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            int finalI = i;
+            Thread tt = new Thread(() -> test.printLetter(finalI, c));
+            tt.start();
+        }
+        Thread space = new Thread(() -> test.printSpace(input.length()));
+        space.start();
+        space.join();
+    }
+
+
+    public static void main(String[] args) throws Exception {
+        Test test = new Test();
+        test.print("alibaba");
+    }
+}
+
+```
+
 欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~
