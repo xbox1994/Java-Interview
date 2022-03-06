@@ -1,6 +1,6 @@
 本项目不再继续维护，将转入本人知识星球持续更新，加入后还可获取专业面试服务
 
-![](https://github.com/xbox1994/Java-Interview/raw/master/images/知识星球.JPG)
+![](https://wx1.sinaimg.cn/mw2000/bea16acaly8h006u8jli5j20go0go3z5.jpg)
 
 本项目是本人参加BAT等其他公司电话、现场面试之后总结出来的针对Java面试的知识点或真题，每个点或题目都是在面试中被问过的。
 
