@@ -1,4 +1,4 @@
-本项目不再更新维护，欢迎加入本人知识星球，获取专业面试服务
+本项目不再继续维护，将转入本人知识星球持续更新，加入后还可获取专业面试服务
 
 ![](https://github.com/xbox1994/Java-Interview/raw/master/images/知识星球.JPG)
 
