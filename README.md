@@ -32,13 +32,14 @@
 * [协调器](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-协调器.md)
 * [ID生成方式](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-ID生成方式.md)
 * [一致性hash](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-一致性hash.md)
+* [一致性hash](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-限流.md)
 ### 微服务
 * [微服务介绍](http://www.wangtianyi.top/blog/2017/04/16/microservies-1-introduction-to-microservies/?utm_source=github&utm_medium=github)
 * [服务发现](https://github.com/xbox1994/Java-Interview/blob/master/MD/微服务-服务注册与发现.md)
 * [API网关](https://github.com/xbox1994/Java-Interview/blob/master/MD/微服务-网关.md)
 * [服务容错保护](https://github.com/xbox1994/Java-Interview/blob/master/MD/微服务-服务容错保护.md)
 * [服务配置中心](https://github.com/xbox1994/Java-Interview/blob/master/MD/微服务-服务配置中心.md)
-### 算法（头条必问）
+### 算法
 * [数组-快速排序-第k大个数](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-数组-快速排序-第k大个数.md)
 * [数组-对撞指针-最大蓄水](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-数组-对撞指针-最大蓄水.md)
 * [数组-滑动窗口-最小连续子数组](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-数组-滑动窗口-最小连续子数组.md)
@@ -46,8 +47,10 @@
 * [链表-链表反转-链表相加](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-链表-反转链表-链表相加.md)
 * [链表-双指针-删除倒数第n个](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-链表-双指针-删除倒数第n个.md)
 * [二叉树-递归-二叉树反转](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-二叉树-递归-二叉树反转.md)
+* [二叉树-递归-多叉树中最长的连续序列](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-二叉树-多叉树中最长的连续序列.md)
 * [动态规划-连续子数组最大和](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-动态规划-连续子数组最大和.md)
 * [数据结构-LRU淘汰算法](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-数据结构-LRU淘汰算法.md)
+* [其他-二十进制相加](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-其他-二十进制相加.md)
 * [有序数组中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/)
 * [数组中的k个最小值](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/solution/zui-xiao-de-kge-shu-by-leetcode-solution/)
 ### 项目举例
