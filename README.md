@@ -32,7 +32,7 @@
 * [协调器](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-协调器.md)
 * [ID生成方式](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-ID生成方式.md)
 * [一致性hash](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-一致性hash.md)
-* [一致性hash](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-限流.md)
+* [限流](https://github.com/xbox1994/Java-Interview/blob/master/MD/分布式-限流.md)
 ### 微服务
 * [微服务介绍](http://www.wangtianyi.top/blog/2017/04/16/microservies-1-introduction-to-microservies/?utm_source=github&utm_medium=github)
 * [服务发现](https://github.com/xbox1994/Java-Interview/blob/master/MD/微服务-服务注册与发现.md)
