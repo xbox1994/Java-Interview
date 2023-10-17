@@ -5,7 +5,7 @@
 4. 个人发展、人生规划、职业道路提供一些自己的意见
 5. 持续更新的Java面试宝典
 
-<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.png"  width="500" />
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.jpg"  width="500" />
 
 ----------------------
 
