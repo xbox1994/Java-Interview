@@ -2,7 +2,7 @@
 ### Java内存区域的分配
 JVM虚拟机内存模型实现规范：
 
-![](https://github.com/xbox1994/Java-Interview/raw/master/images/JVM规范.png)
+![](../images/JVM规范.png)
 
 
 按线程是否共享分为以下区域：
@@ -20,7 +20,7 @@ JVM虚拟机内存模型实现规范：
 
 以HotSpot虚拟机实现为例，Java8中内存区域如下：
 
-![](https://github.com/xbox1994/Java-Interview/raw/master/images/JVM1.8.png)
+![](../images/JVM1.8.png)
 
 与规范中的区别：
 
@@ -66,7 +66,7 @@ JVM虚拟机内存模型实现规范：
 3. 为了实现代码热替换，OSGi是为了实现自己的类加载逻辑，用平级查找的逻辑替换掉了向下传递的逻辑。但其实可以不破坏双亲委派逻辑而是自定义类加载器来达到代码热替换。比如[这篇文章](https://www.cnblogs.com/pfxiong/p/4070462.html)
 
 ### 内存分配（堆上的内存分配）
-![](https://github.com/xbox1994/Java-Interview/raw/master/images/堆的内存分配.png)
+![](../images/堆的内存分配.png)
 #### 新生代
 ##### 进入条件
 优先选择在新生代的Eden区被分配。
@@ -140,7 +140,7 @@ STW总会发生，不管是新生代还是老年代，比如CMS在初始标记�
 
 实现：volatile、synchronized、final、concurrent包等。其实这些就是Java内存模型封装了底层的实现后提供给程序员使用的一些关键字
 
-![](https://github.com/xbox1994/Java-Interview/raw/master/images/j12.jpg)
+![](../images/j12.jpg)
 
 主内存：所有变量都保存在主内存中  
 工作内存：每个线程的独立内存，保存了该线程使用到的变量的主内存副本拷贝，线程对变量的操作必须在工作内存中进行
