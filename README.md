@@ -18,7 +18,7 @@
 6. **重点针对**，面试官会针对简历提问，所以请针对简历上写的所有技术点进行重点准备
 
 ### Java基础
-* [JVM原理](https://github.com/xbox1994/Java-Interview/blob/master/MD/Java基础-JVM原理.md)
+* [JVM原理](MD/Java基础-JVM原理.md)
 * [集合](https://github.com/xbox1994/Java-Interview/blob/master/MD/Java基础-集合.md)
 * [多线程](https://github.com/xbox1994/Java-Interview/blob/master/MD/Java基础-多线程.md)
 * [IO](https://github.com/xbox1994/Java-Interview/blob/master/MD/Java基础-IO.md)
