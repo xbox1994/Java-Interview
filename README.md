@@ -1,3 +1,12 @@
+本项目将永久持续维护，有兴趣的伙伴建议微信扫码入群，我将在一段时间内免费在群内为大家提供（本人前快手高级开发，8年Java工作经验，大厂小厂C端B端都呆过）：
+1. Java相关面试问题咨询
+2. 国内大厂内推机会
+3. 一对一语音简历优化、模拟面试
+
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.jpg"  width="500" />
+
+----------------------
+
 本项目是本人参加BAT等其他公司电话、现场面试之后总结出来的针对Java面试的知识点或真题，每个点或题目都是在面试中被问过的。
 
 除开知识点，一定要准备好以下套路：  
@@ -46,6 +55,7 @@
 * [数组-归并排序-合并有序数组](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-数组-归并排序-合并有序数组.md)
 * [链表-链表反转-链表相加](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-链表-反转链表-链表相加.md)
 * [链表-双指针-删除倒数第n个](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-链表-双指针-删除倒数第n个.md)
+* [链表-双指针-重排链表](https://leetcode.cn/problems/reorder-list/description/)
 * [二叉树-递归-二叉树反转](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-二叉树-递归-二叉树反转.md)
 * [二叉树-递归-多叉树中最长的连续序列](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-二叉树-多叉树中最长的连续序列.md)
 * [动态规划-连续子数组最大和](https://github.com/xbox1994/Java-Interview/blob/master/MD/算法-动态规划-连续子数组最大和.md)
