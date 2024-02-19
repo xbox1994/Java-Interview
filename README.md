@@ -3,7 +3,7 @@
 2. 国内大厂内推机会
 3. 一对一语音简历优化、模拟面试
 
-<img src="../images/wxg.jpg"  width="500" />
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.jpg"  width="500" />
 
 ----------------------
 
