@@ -33,6 +33,30 @@ MyISAM相对简单所以在效率上要优于InnoDB。如果系统插入和查�
 问：有个表特别大，字段是姓名、年龄、班级，如果调用`select * from table where name = xxx and age = xxx`该如何通过建立索引的方式优化查询速度？  
 答：由于mysql查询每次只能使用一个索引，如果在name、age两列上创建联合索引的话将带来更高的效率。如果我们创建了(name, age)的联合索引，那么其实相当于创建了(name, age)、(name)2个索引。因此我们在创建复合索引时应该将最常用作限制条件的列放在最左边，依次递减。其次还要考虑该列的数据离散程度，如果有很多不同的值的话建议放在左边，name的离散程度也大于age。
 
+问：优化大数据量的分页查询？
+1. 索引优化：确保用于排序和筛选的字段已经建立了索引
+2. 延迟关联：先获取主键，然后再根据主键获取完整的行数据。这样可以减少数据库在排序时需要处理的数据量。通过将 select * 转变为 select id，把符合条件的 id 筛选出来后，最后通过嵌套查询的方式按顺序取出 id 对应的行
+3. 业务限制：查询页数上限
+4. 使用其他数据结构如ES、分表
+
+```sql
+-- 优化前
+select *
+from people
+order by create_time desc
+limit 5000000, 10;
+
+-- 优化后
+select a.*
+from people a
+inner join(
+    select id
+    from people
+    order by create_time desc
+    limit 5000000, 10
+) b ON a.id = b.id;
+```
+
 #### 最左前缀匹配原则
 定义：在检索数据时从联合索引的最左边开始匹配。一直向右匹配直到遇到范围查询（>/</between/like）就停止后面的匹配。比如查询a = 3, b = 4 and c > 5 and d = 6，如果建立(a,b,c,d)索引，d是用不到索引的，如果建立(a,b,d,c)索引，则都可以用到，此外a,b,d的顺序可以任意调整
 
