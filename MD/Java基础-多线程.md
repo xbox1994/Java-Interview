@@ -83,7 +83,16 @@ Synchronized是独享锁
 2. 禁止 JVM 进行的指令重排序。
 
 ### ThreadLocal
-使用`ThreadLocal<UserInfo> userInfo = new ThreadLocal<UserInfo>()`的方式，让每个线程内部都会维护一个ThreadLocalMap，里边包含若干了 Entry（K-V 键值对），每次存取都会先获取到当前线程ID，然后得到该线程对象中的Map，然后与Map交互。
+1. 定义：ThreadLocal变量每个线程都会有这个变量的一个本地拷贝，多个线程操作这个变量的时候，实际是在操作自己本地内存里面的变量，从而起到线程隔离的作用，避免了并发场景下的线程安全问题。
+2. 原理：Thread线程类有一个类型为ThreadLocal.ThreadLocalMap的实例变量threadLocals，即每个线程都有一个属于自己的ThreadLocalMap。ThreadLocalMap内部维护着Entry数组，每个Entry代表一个完整的对象，key是ThreadLocal本身，value是ThreadLocal的泛型值。并发多线程场景下，每个线程Thread，在往ThreadLocal里设置值的时候，都是往自己的ThreadLocalMap里存，读也是以某个ThreadLocal作为引用，在自己的map里找对应的key，从而可以实现了线程隔离。
+3. Entry的Key为什么要设计成弱引用：如果Key使用强引用：当ThreadLocal的对象被回收了，但是ThreadLocalMap还持有ThreadLocal的强引用的话，如果没有手动删除，ThreadLocal就不会被回收，会出现Entry的内存泄漏问题。如果Key使用弱引用：当ThreadLocal的对象被回收了，因为ThreadLocalMap持有ThreadLocal的弱引用，即使没有手动删除，ThreadLocal也会被回收。value则在下一次ThreadLocalMap调用set,get，remove的时候会被清除。
+
+
+1. 强引用:我们平时new了一个对象就是强引用，例如 Object obj = new Object();即使在内存不足的情况下，JVM宁愿抛出OutOfMemory错误也不会回收这种对象。
+2. 软引用：如果一个对象只具有软引用，则内存空间足够，垃圾回收器就不会回收它；如果内存空间不足了，就会回收这些对象的内存。
+3. 弱引用:具有弱引用的对象拥有更短暂的生命周期。如果一个对象只有弱引用存在了，则下次GC将会回收掉该对象（不管当前内存空间足够与否）。
+4. 虚引用:如果一个对象仅持有虚引用，那么它就和没有任何引用一样，在任何时候都可能被垃圾回收器回收。虚引用主要用来跟踪对象被垃圾回收器回收的活动。
+
 
 ### 线程池
 #### 起源
