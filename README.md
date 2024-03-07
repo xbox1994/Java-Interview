@@ -3,10 +3,13 @@
 2. 国内大厂内推机会
 3. 一对一语音简历优化、模拟面试
 
-<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.jpg"  width="250" />
+<center>
+<figure>
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.jpg"  width="350" />
 
-<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.jpg"  width="250" />
-
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.jpg"  width="350" />
+</figure>
+</center>
 ----------------------
 
 本项目是本人参加BAT等其他公司电话、现场面试之后总结出来的针对Java面试的知识点或真题，每个点或题目都是在面试中被问过的。
