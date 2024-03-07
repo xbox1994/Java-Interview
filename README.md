@@ -6,7 +6,7 @@
 <center>
 <figure>
 <img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.jpg"  width="350" />
-<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.png"  width="350" />
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.png"  width="70" />
 <img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.jpg"  width="350" />
 </figure>
 </center>
