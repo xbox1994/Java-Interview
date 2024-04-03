@@ -1,6 +1,8 @@
 本项目将永久持续维护，欢迎关注公众号
 <center>
 <figure>
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.jpg"  width="350" />
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.png"  width="350" />
 <img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.jpg"  width="350" />
 </figure>
 </center>
@@ -75,4 +77,11 @@
 * [概率p输出1，概率1-p输出0，等概率输出0和1](https://blog.csdn.net/qq_29108585/article/details/60765640)
 * [判断点是否在多边形内部](https://www.cnblogs.com/muyefeiwu/p/11260366.html)
 
-欢迎光临[我的博客](http://www.wangtianyi.top/?utm_source=github&utm_medium=github)，发现更多技术资源~
+
+如您觉得有所帮助，欢迎打赏给我，我会更加积极地维护本项目
+
+<center>
+<figure>
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/pay_wx.png"  width="350" />
+</figure>
+</center>
