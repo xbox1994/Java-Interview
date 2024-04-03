@@ -1,7 +1,11 @@
-本项目将永久持续维护，欢迎关注公众号
+本项目将永久持续维护，有兴趣的伙伴建议微信扫码入群，我（前快手高级Java开发，8年Java工作经验）将在一段时间内免费在群内为大家提供：
+1. Java相关面试问题咨询
+2. 国内大厂内推机会
+3. 一对一语音简历优化、模拟面试
+
 <center>
 <figure>
-<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.jpg"  width="350" />
+<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg.png"  width="350" />
 <img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.png"  width="350" />
 <img src="https://github.com/xbox1994/Java-Interview/raw/master/images/wxg2.jpg"  width="350" />
 </figure>
@@ -77,7 +81,7 @@
 * [概率p输出1，概率1-p输出0，等概率输出0和1](https://blog.csdn.net/qq_29108585/article/details/60765640)
 * [判断点是否在多边形内部](https://www.cnblogs.com/muyefeiwu/p/11260366.html)
 
-
+# 赞助
 如您觉得有所帮助，欢迎打赏给我，我会更加积极地维护本项目
 
 <center>
