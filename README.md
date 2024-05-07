@@ -66,12 +66,3 @@
 ### 智力题
 * [概率p输出1，概率1-p输出0，等概率输出0和1](https://blog.csdn.net/qq_29108585/article/details/60765640)
 * [判断点是否在多边形内部](https://www.cnblogs.com/muyefeiwu/p/11260366.html)
-
-# 赞助
-如您觉得有所帮助，欢迎打赏给我，我会更加积极地维护本项目
-
-<center>
-<figure>
-<img src="https://github.com/xbox1994/Java-Interview/raw/master/images/pay_wx.png"  width="350" />
-</figure>
-</center>
